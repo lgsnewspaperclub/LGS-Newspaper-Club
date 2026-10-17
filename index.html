@@ -64,8 +64,16 @@
             width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto 10px;
             mix-blend-mode: multiply;
+        }
+
+        .masthead h1 {
+            margin: 10px 0 5px;
+            font-size: clamp(36px, 7vw, 76px);
+            line-height: 1;
+            letter-spacing: -2px;
+            font-weight: 900;
         }
 
         .masthead p {
@@ -197,4 +205,164 @@
 
         .article p {
             font-size: 15px;
-            margin:
+            margin: 8px 0;
+        }
+
+        .placeholder {
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .about {
+            margin-top: 32px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 2px solid var(--black);
+        }
+
+        .about h2 {
+            font-size: 30px;
+            margin: 8px 0;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: 10px auto 0;
+        }
+
+        footer {
+            border-top: 3px double var(--black);
+            padding: 26px 16px;
+            text-align: center;
+        }
+
+        footer .footer-name {
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .footer-small {
+            font: 10px Arial, sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 700px) {
+            .topbar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .masthead {
+                padding: 25px 14px 20px;
+            }
+
+            .masthead .logo {
+                max-width: 280px;
+            }
+
+            nav {
+                gap: 14px 20px;
+            }
+
+            main {
+                padding: 24px 18px 40px;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .intro-aside {
+                border-left: none;
+                border-top: 1px solid var(--black);
+                padding: 20px 0 0;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .article,
+            .article:last-child {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 0 0 18px;
+            }
+
+            .article:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <span>Independent Student Journalism</span>
+        <span>LGS Newspaper Club</span>
+    </div>
+
+    <header class="masthead">
+        <img src="logo.png" alt="LGS Newspaper Club" class="logo" onerror="this.style.display='none'">
+        <p>Our school. Our stories. Our perspectives.</p>
+        <div class="rule"></div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#latest">Latest News</a>
+        <a href="#opinions">Opinions</a>
+        <a href="#features">Features &amp; Interviews</a>
+        <a href="#events">School Events</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <main>
+
+        <section class="intro" id="latest">
+            <div>
+                <div class="label">Welcome to the newsroom</div>
+                <h2>A closer look at the stories that shape our school.</h2>
+                <p class="description">
+                    The online home of LGS Newspaper Club.
+                    A student-led publication for school news, ideas,
+                    conversations and the moments worth remembering.
+                </p>
+            </div>
+
+            <aside class="intro-aside">
+                <div class="label">From our newsroom</div>
+                <h3>Every story deserves a voice.</h3>
+                <p>
+                    Exploring the people, opinions and events that
+                    make our school community what it is.
+                </p>
+            </aside>
+        </section>
+
+        <section class="section" id="opinions">
+            <div class="section-title">
+                <h2>Student Opinions</h2>
+                <span>Ideas &amp; perspectives</span>
+            </div>
+
+            <div class="article-grid">
+                <article class="article">
+                    <div class="label">Commentary</div>
+                    <h3>Student Voices</h3>
+                    <p>Ideas and perspectives on the subjects that matter to students.</p>
+                    <p class="placeholder">Your articles will go here.</p>
+                </article>
+
+                <article class="article">
+                    <div class="label">Discussion</div>
+                    <h3>Different Points of View</h3>
+                    <p>Thoughtful arguments and respectful conversations from our community.</p
