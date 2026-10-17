@@ -161,8 +161,8 @@
                     <img id="header-logo" 
                          src="logo.png" 
                          alt="LGS Newspaper Club Logo" 
-                         class="max-h-24 sm:max-h-28 md:max-h-32 w-auto object-contain"
-                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;240\&quot; height=\&quot;100\&quot; viewBox=\&quot;0 0 240 100\&quot;&gt;&lt;rect width=\&quot;240\&quot; height=\&quot;100\&quot; fill=\&quot;%23a6a6a6\&quot; stroke=\&quot;%23000000\&quot; stroke-width=\&quot;4\&quot;/&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;40%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;900\&quot; font-size=\&quot;18\&quot; fill=\&quot;%23000000\&quot;&gt;LGS&lt;/text&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;65%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;700\&quot; font-size=\&quot;12\&quot; fill=\&quot;%23000000\&quot;&gt;NEWSPAPER CLUB&lt;/text&gt;&lt;/svg&gt;';">
+                         class="max-h-36 sm:max-h-44 md:max-h-52 w-auto object-contain"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;240\&quot; height=\&quot;100\&quot;&gt;&lt;rect width=\&quot;240\&quot; height=\&quot;100\&quot; fill=\&quot;%23a6a6a6\&quot; stroke=\&quot;%23000000\&quot; stroke-width=\&quot;4\&quot;/&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;40%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;900\&quot; font-size=\&quot;18\&quot; fill=\&quot;%23000000\&quot;&gt;LGS&lt;/text&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;65%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;700\&quot; font-size=\&quot;12\&quot; fill=\&quot;%23000000\&quot;&gt;NEWSPAPER CLUB&lt;/text&gt;&lt;/svg&gt;';">
                 </a>
             </div>
 
@@ -181,9 +181,10 @@
         <div class="border-t-2 border-b border-monochrome h-1 my-3"></div>
 
         <!-- Navigation Bar -->
-        <nav class="flex justify-center items-center gap-6 sm:gap-10 text-xs sm:text-sm font-sans-clean font-bold tracking-widest uppercase py-1">
+        <nav class="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-xs sm:text-sm font-sans-clean font-bold tracking-widest uppercase py-1">
             <a href="#welcome" class="hover:underline underline-offset-4">Welcome</a>
             <a href="#latest-news" class="hover:underline underline-offset-4">Latest News</a>
+            <a href="#lgs-history" class="hover:underline underline-offset-4">Brief History</a>
             <a href="#about" class="hover:underline underline-offset-4">About</a>
         </nav>
     </header>
@@ -279,7 +280,7 @@
                 <h3 class="font-headline text-2xl sm:text-3xl font-bold uppercase">About the Publication</h3>
                 <div class="border-t border-b border-monochrome py-4 my-2">
                     <p class="font-serif text-xl sm:text-2xl italic leading-relaxed">
-                        "This is the LGS Multan's Premier Campus' NewsPaper Club. est-2025"
+                        This is the LGS Multan's Premier Campus' NewsPaper Club. est-2025
                     </p>
                 </div>
             </div>
@@ -615,8 +616,19 @@
             if (e.key === 'Escape') closeModal();
         });
 
+        // Dynamic Current Date Formatter
+        function updateCurrentDate() {
+            const dateElement = document.getElementById('current-date');
+            if (dateElement) {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                dateElement.innerText = now.toLocaleDateString('en-US', options).toUpperCase();
+            }
+        }
+
         // Initialize Page on DOM Ready
         window.addEventListener('DOMContentLoaded', () => {
+            updateCurrentDate();
             renderArticles();
         });
     </script>
