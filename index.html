@@ -517,7 +517,7 @@
 
             filtered.forEach(article => {
                 const card = document.createElement('article');
-                card.className = "post-card border-2 border-monochrome flex flex-col justify-between cursor-pointer group p-4 overflow-hidden focus:outline-none";
+                card.className = "post-card border-2 border-monochrome flex flex-col justify-between cursor-pointer group p-4 sm:p-5 overflow-hidden focus:outline-none focus:ring-2 focus:ring-black";
                 card.tabIndex = 0;
                 card.onclick = () => openModal(article.id);
                 card.onkeydown = (e) => {
@@ -540,7 +540,7 @@
                                  onerror="this.onerror=null; this.src='${fallbackUrl}';">
                             
                             ${hasMultipleImages ? `
-                                <div class="absolute top-2.5 right-2.5 bg-black text-[#a6a6a6] text-[10px] font-sans-clean font-bold px-2 py-0.5 border border-black shadow-sm">
+                                <div class="absolute top-2.5 right-2.5 bg-black text-[#a6a6a6] text-[10px] font-sans-clean font-bold px-2.5 py-1 border border-black shadow-sm">
                                     📷 ${article.images.length} PHOTOS
                                 </div>
                             ` : ''}
@@ -563,9 +563,9 @@
                         </p>
                     </div>
 
-                    <!-- Card Footer Read Link -->
+                    <!-- Card Footer View More Link -->
                     <div class="pt-3.5 mt-3.5 border-t border-monochrome flex justify-between items-center text-xs font-sans-clean font-bold uppercase tracking-wider">
-                        <span>Read Full Story</span>
+                        <span>View More</span>
                         <span class="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                 `;
