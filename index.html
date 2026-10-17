@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#a6a6a6">
-    <meta name="description" content="LGS Newspaper Club — school news, student opinions, interviews and events.">
+    <meta name="description" content="LGS Newspaper Club — Independent student news, opinions, interviews, and campus events.">
 
-    <title>LGS Newspaper Club</title>
+    <title>LGS Newspaper Club | The Student Press</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --grey: #a6a6a6;
             --black: #000000;
-            --line: rgba(0, 0, 0, 0.45);
-            --muted: #333333;
+            --line: rgba(0, 0, 0, 0.35);
+            --muted: #2c2c2c;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', Arial, sans-serif;
         }
 
         * {
@@ -28,133 +35,151 @@
             margin: 0;
             background: var(--grey);
             color: var(--black);
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: var(--font-serif);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         a {
             color: inherit;
             text-decoration: none;
+            transition: opacity 0.15s ease;
         }
 
         a:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            opacity: 0.75;
         }
 
+        /* Top Banner */
         .topbar {
             padding: 10px 5%;
             border-bottom: 1px solid var(--black);
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
             gap: 8px;
-            font: 11px Arial, sans-serif;
+            font: 500 11px var(--font-sans);
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
+        /* Masthead Header */
         .masthead {
             text-align: center;
-            padding: 35px 20px 25px;
+            padding: 40px 20px 25px;
         }
 
         .masthead .logo {
-            max-width: 420px;
+            max-width: 440px;
             width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto 10px;
+            margin: 0 auto;
             mix-blend-mode: multiply;
-        }
-
-        .masthead h1 {
-            margin: 10px 0 5px;
-            font-size: clamp(36px, 7vw, 76px);
-            line-height: 1;
-            letter-spacing: -2px;
-            font-weight: 900;
         }
 
         .masthead p {
             margin: 12px 0 0;
-            font-size: 15px;
+            font-size: 16px;
             font-style: italic;
+            color: var(--muted);
         }
 
         .masthead .rule {
             width: 100%;
-            max-width: 680px;
+            max-width: 800px;
             height: 5px;
             border-top: 2px solid var(--black);
             border-bottom: 1px solid var(--black);
-            margin: 20px auto 0;
+            margin: 22px auto 0;
         }
 
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px 32px;
-            padding: 14px 16px;
+            gap: 12px 36px;
+            padding: 12px 16px;
             border-top: 1px solid var(--black);
             border-bottom: 2px solid var(--black);
+            position: sticky;
+            top: 0;
+            background: var(--grey);
+            z-index: 100;
         }
 
         nav a {
-            font: bold 11px Arial, sans-serif;
-            letter-spacing: 1px;
+            font: 600 11px var(--font-sans);
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            padding: 4px 0;
         }
 
+        /* Layout Container */
         main {
-            max-width: 1150px;
+            max-width: 1180px;
             margin: auto;
-            padding: 30px 24px 60px;
+            padding: 35px 24px 60px;
         }
 
         .label {
-            font: bold 10px Arial, sans-serif;
+            font: 600 10px var(--font-sans);
             letter-spacing: 2px;
             text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 6px;
         }
 
+        /* Hero / Intro Section */
         .intro {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 35px;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 40px;
             padding-bottom: 35px;
             border-bottom: 3px double var(--black);
         }
 
         .intro h2 {
-            font-size: clamp(34px, 5vw, 57px);
+            font-size: clamp(34px, 4.5vw, 54px);
             line-height: 1.08;
-            letter-spacing: -1px;
-            margin: 12px 0;
+            letter-spacing: -0.5px;
+            margin: 10px 0 16px;
+            font-weight: 900;
         }
 
         .intro .description {
             max-width: 620px;
-            font-size: 17px;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         .intro-aside {
             border-left: 1px solid var(--black);
-            padding-left: 26px;
+            padding-left: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .intro-aside h3 {
-            font-size: 27px;
+            font-size: 28px;
             line-height: 1.2;
-            margin: 12px 0;
+            margin: 10px 0 14px;
         }
 
+        .intro-aside p {
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        /* Content Sections */
         .section {
-            padding: 32px 0;
+            padding: 36px 0;
             border-bottom: 1px solid var(--black);
-            scroll-margin-top: 20px;
+            scroll-margin-top: 50px;
         }
 
         .section-title {
@@ -165,31 +190,35 @@
             gap: 8px 18px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--black);
-            margin-bottom: 22px;
+            margin-bottom: 28px;
         }
 
         .section-title h2 {
             margin: 0;
-            font-size: clamp(25px, 4vw, 34px);
+            font-size: clamp(24px, 3.5vw, 32px);
             line-height: 1.2;
+            font-weight: 700;
         }
 
         .section-title span {
-            font: 10px Arial, sans-serif;
+            font: 500 11px var(--font-sans);
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
+        /* Article Columns */
         .article-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 24px;
+            gap: 28px;
         }
 
         .article {
             min-width: 0;
-            padding-right: 20px;
+            padding-right: 24px;
             border-right: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
         }
 
         .article:last-child {
@@ -198,14 +227,24 @@
         }
 
         .article h3 {
-            font-size: 23px;
-            line-height: 1.22;
-            margin: 10px 0;
+            font-size: 22px;
+            line-height: 1.25;
+            margin: 8px 0 10px;
+            font-weight: 700;
         }
 
         .article p {
             font-size: 15px;
-            margin: 8px 0;
+            margin: 0 0 12px;
+            line-height: 1.55;
+        }
+
+        .article .meta {
+            font: 500 11px var(--font-sans);
+            color: var(--muted);
+            margin-top: auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .placeholder {
@@ -213,92 +252,102 @@
             color: var(--muted);
         }
 
+        /* About Block */
         .about {
-            margin-top: 32px;
-            padding: 30px 20px;
+            margin-top: 40px;
+            padding: 36px 24px;
             text-align: center;
             border: 2px solid var(--black);
+            background: rgba(0, 0, 0, 0.02);
         }
 
         .about h2 {
-            font-size: 30px;
-            margin: 8px 0;
+            font-size: 32px;
+            margin: 8px 0 12px;
+            font-weight: 700;
         }
 
         .about p {
-            max-width: 650px;
-            margin: 10px auto 0;
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 16px;
         }
 
+        /* Footer */
         footer {
             border-top: 3px double var(--black);
-            padding: 26px 16px;
+            padding: 30px 16px;
             text-align: center;
         }
 
         footer .footer-name {
-            font-size: 23px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 4px 0;
         }
 
         footer .footer-small {
-            font: 10px Arial, sans-serif;
+            font: 500 10px var(--font-sans);
             letter-spacing: 1.5px;
             text-transform: uppercase;
+            margin-top: 12px;
         }
 
-        @media (max-width: 700px) {
-            .topbar {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .masthead {
-                padding: 25px 14px 20px;
-            }
-
-            .masthead .logo {
-                max-width: 280px;
-            }
-
-            nav {
-                gap: 14px 20px;
-            }
-
-            main {
-                padding: 24px 18px 40px;
-            }
-
+        /* Responsive Breakpoints */
+        @media (max-width: 850px) {
             .intro {
                 grid-template-columns: 1fr;
-                gap: 22px;
+                gap: 25px;
             }
 
             .intro-aside {
                 border-left: none;
                 border-top: 1px solid var(--black);
-                padding: 20px 0 0;
+                padding: 24px 0 0;
             }
 
             .article-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 24px;
             }
 
             .article,
             .article:last-child {
                 border-right: none;
                 border-bottom: 1px solid var(--line);
-                padding: 0 0 18px;
+                padding: 0 0 20px;
             }
 
             .article:last-child {
                 border-bottom: none;
                 padding-bottom: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .topbar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .masthead {
+                padding: 28px 14px 20px;
+            }
+
+            .masthead .logo {
+                max-width: 300px;
+            }
+
+            nav {
+                gap: 10px 18px;
+            }
+
+            main {
+                padding: 20px 16px 40px;
             }
         }
     </style>
@@ -334,7 +383,7 @@
                 <p class="description">
                     The online home of LGS Newspaper Club.
                     A student-led publication for school news, ideas,
-                    conversations and the moments worth remembering.
+                    conversations, and the moments worth remembering.
                 </p>
             </div>
 
@@ -342,7 +391,7 @@
                 <div class="label">From our newsroom</div>
                 <h3>Every story deserves a voice.</h3>
                 <p>
-                    Exploring the people, opinions and events that
+                    Exploring the people, opinions, and events that
                     make our school community what it is.
                 </p>
             </aside>
@@ -360,9 +409,111 @@
                     <h3>Student Voices</h3>
                     <p>Ideas and perspectives on the subjects that matter to students.</p>
                     <p class="placeholder">Your articles will go here.</p>
+                    <div class="meta">Opinion · Issue 01</div>
                 </article>
 
                 <article class="article">
                     <div class="label">Discussion</div>
                     <h3>Different Points of View</h3>
-                    <p>Thoughtful arguments and respectful conversations from our community.</p
+                    <p>Thoughtful arguments and respectful conversations from our community.</p>
+                    <p class="placeholder">Your articles will go here.</p>
+                    <div class="meta">Discussion · Issue 01</div>
+                </article>
+
+                <article class="article">
+                    <div class="label">Open Column</div>
+                    <h3>Food for Thought</h3>
+                    <p>Fresh perspectives on school life and the wider world.</p>
+                    <p class="placeholder">Your articles will go here.</p>
+                    <div class="meta">Column · Issue 01</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="section-title">
+                <h2>Features &amp; Interviews</h2>
+                <span>People &amp; stories</span>
+            </div>
+
+            <div class="article-grid">
+                <article class="article">
+                    <div class="label">Interview</div>
+                    <h3>In Conversation</h3>
+                    <p>Conversations with interesting people from our school community.</p>
+                    <p class="placeholder">Your interviews will go here.</p>
+                    <div class="meta">Interview · Issue 01</div>
+                </article>
+
+                <article class="article">
+                    <div class="label">Student Spotlight</div>
+                    <h3>Beyond the Classroom</h3>
+                    <p>Discovering the talent, ideas, and achievements of our students.</p>
+                    <p class="placeholder">Your features will go here.</p>
+                    <div class="meta">Spotlight · Issue 01</div>
+                </article>
+
+                <article class="article">
+                    <div class="label">Long Read</div>
+                    <h3>Stories Worth Telling</h3>
+                    <p>People and experiences that deserve a closer look.</p>
+                    <p class="placeholder">Your features will go here.</p>
+                    <div class="meta">Feature · Issue 01</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="events">
+            <div class="section-title">
+                <h2>School Events</h2>
+                <span>Life around campus</span>
+            </div>
+
+            <div class="article-grid">
+                <article class="article">
+                    <div class="label">Campus News</div>
+                    <h3>Around Our School</h3>
+                    <p>News and updates from across our school community.</p>
+                    <p class="placeholder">Your event coverage will go here.</p>
+                    <div class="meta">Campus · Issue 01</div>
+                </article>
+
+                <article class="article">
+                    <div class="label">Highlights</div>
+                    <h3>Moments to Remember</h3>
+                    <p>Looking back at the events and experiences that brought us together.</p>
+                    <p class="placeholder">Your event coverage will go here.</p>
+                    <div class="meta">Highlights · Issue 01</div>
+                </article>
+
+                <article class="article">
+                    <div class="label">Announcements</div>
+                    <h3>What's Coming Up?</h3>
+                    <p>A place for upcoming activities and important school announcements.</p>
+                    <p class="placeholder">Your updates will go here.</p>
+                    <div class="meta">Events · Issue 01</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="label">About the publication</div>
+            <h2>LGS Newspaper Club</h2>
+            <p>
+                A student-led publication sharing school news,
+                student opinions, interviews, and events.
+                We aim to inform, encourage discussion, and give
+                our school community a platform for its stories.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="footer-name">LGS Newspaper Club</p>
+        <p>Our school. Our stories. Our perspectives.</p>
+        <p class="footer-small">Student Journalism · Est. 2025</p>
+    </footer>
+
+</body>
+</html>
