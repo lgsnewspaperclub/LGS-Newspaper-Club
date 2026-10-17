@@ -12,6 +12,10 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
 
+    <!-- Favicon / Tab Icon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
     <!-- Open Graph / Facebook / WhatsApp Preview Cards -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lgsnewspaperclub.github.io/">
@@ -170,7 +174,7 @@
             <div class="w-full md:w-1/4 flex justify-center md:justify-start items-center gap-3">
                 <a href="#" class="block hover:opacity-85 transition-opacity focus:outline-none" aria-label="LGS Newspaper Club Home">
                     <img id="header-logo" 
-                         src="logo.png" 
+                         src="YOUR_NEW_LOGO_NAME_OR_URL_HERE.png" 
                          alt="LGS Newspaper Club Logo" 
                          class="max-h-28 sm:max-h-36 md:max-h-40 w-auto object-contain"
                          onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;240\&quot; height=\&quot;100\&quot;&gt;&lt;rect width=\&quot;240\&quot; height=\&quot;100\&quot; fill=\&quot;%23a6a6a6\&quot; stroke=\&quot;%23000000\&quot; stroke-width=\&quot;4\&quot;/&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;40%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;900\&quot; font-size=\&quot;18\&quot; fill=\&quot;%23000000\&quot;&gt;LGS&lt;/text&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;65%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;700\&quot; font-size=\&quot;12\&quot; fill=\&quot;%23000000\&quot;&gt;NEWSPAPER CLUB&lt;/text&gt;&lt;/svg&gt;';">
@@ -282,8 +286,7 @@
         <div>© 2026 LGS NEWSPAPER CLUB. ALL RIGHTS RESERVED.</div>
         <div>@LGSNEWSPAPERCLUB</div>
         <div class="w-full text-center border-t border-monochrome/40 pt-3 mt-1 sm:border-t-0 sm:pt-0 sm:mt-0 sm:w-auto text-gray-900">
-            WEBSITE CREDITS: MUHAMMAD ABDULLAH
-                             (A2 LEVEL)
+            WEBSITE CREDITS: MUHAMMAD ABDULLAH (A2LEVEL)
         </div>
     </footer>
 
@@ -363,6 +366,26 @@
         }
 
         // Article Database from LGS Newspaper Club covers
+        // ---------------------------------------------------------------------
+        // IMAGE FILE NAMING GUIDE:
+        // Save your image files in the same folder as this index.html file 
+        // with the exact names listed in the 'images' array below:
+        //
+        // Article 8:  article8.jpg
+        // Article 9:  article9.jpg
+        // Article 10: article10.jpg
+        // Article 11: article11.jpg
+        // Article 12: article12.jpg
+        // Article 13: article13.jpg
+        // Article 1:  article1_1.jpg, article1_2.jpg, article1_3.jpg, article1_4.jpg
+        // Article 2:  article2.jpg
+        // Article 3:  article3.jpg
+        // Article 4:  article4.jpg
+        // Article 5:  article5.jpg
+        // Article 6:  article6.jpg
+        // Article 7:  article7.jpg
+        // Article 14: article14.jpg
+        // ---------------------------------------------------------------------
         const articles = [
             {
                 id: 8,
@@ -370,7 +393,7 @@
                 category: "World News",
                 date: "SATURDAY, NOVEMBER 22 2025",
                 author: "Global Desk",
-                images: ["article8.jpg"],
+                images: ["article8.jpg"], // <-- Rename your image file to: article8.jpg
                 summary: "UNICEF says baby girl among several children killed this week as Israel carried out a wave of bombings despite truce.",
                 content: "UNICEF says baby girl among several children killed this week as Israel carried out a wave of bombings despite truce."
             },
@@ -380,7 +403,7 @@
                 category: "Campus",
                 date: "SATURDAY, NOVEMBER 22 2025",
                 author: "Campus Beat",
-                images: ["article9.jpg"],
+                images: ["article9.jpg"], // <-- Rename your image file to: article9.jpg
                 summary: "A dispute arose among the students due to a \"confidential- reason\" where as expected more people were enjoying the 'show' rather than cooling the situation down",
                 content: "A dispute arose among the students due to a \"confidential- reason\" where as expected more people were enjoying the 'show' rather than cooling the situation down"
             },
@@ -390,7 +413,7 @@
                 category: "Sports",
                 date: "MONDAY, DECEMBER 15 2025",
                 author: "Sports Desk",
-                images: ["article10.jpg"],
+                images: ["article10.jpg"], // <-- Rename your image file to: article10.jpg
                 summary: "Sports Fiesta: Cricket tournament stopped due to a dispute between the teams",
                 content: "Sports Fiesta: Cricket tournament stopped due to a dispute between the teams"
             },
@@ -400,7 +423,7 @@
                 category: "Events",
                 date: "SUNDAY, FEBRUARY 1 2026",
                 author: "Campus Beat",
-                images: ["article11.jpg"],
+                images: ["article11.jpg"], // <-- Rename your image file to: article11.jpg
                 summary: "Bonfire 2k26 celebration at LGS Premier Campus.",
                 content: "Bonfire 2k26 celebration at LGS Premier Campus."
             },
@@ -410,7 +433,7 @@
                 category: "Events",
                 date: "TUESDAY, DECEMBER 23 2025",
                 author: "Campus Beat",
-                images: ["article12.jpg"],
+                images: ["article12.jpg"], // <-- Rename your image file to: article12.jpg
                 summary: "LGS Premier Campus: Welcome 2025",
                 content: "LGS Premier Campus: Welcome 2025"
             },
@@ -420,7 +443,7 @@
                 category: "Sports",
                 date: "THURSDAY, DECEMBER 18 2025",
                 author: "Sports Desk",
-                images: ["article13.jpg"],
+                images: ["article13.jpg"], // <-- Rename your image file to: article13.jpg
                 summary: "Sports Fiesta: Team A2 takes the win against Team AS in penalty shootouts in the football rematch.",
                 content: "Sports Fiesta: Team A2 takes the win against Team AS in penalty shootouts in the football rematch."
             },
@@ -431,10 +454,10 @@
                 date: "Sunday, December 14, 2025",
                 author: "Ayan Ibrahim",
                 images: [
-                    "article1_1.jpg",
-                    "article1_2.jpg",
-                    "article1_3.jpg",
-                    "article1_4.jpg"
+                    "article1_1.jpg", // <-- Page/Image 1: article1_1.jpg
+                    "article1_2.jpg", // <-- Page/Image 2: article1_2.jpg
+                    "article1_3.jpg", // <-- Page/Image 3: article1_3.jpg
+                    "article1_4.jpg"  // <-- Page/Image 4: article1_4.jpg
                 ],
                 summary: "An in-depth legal analysis examining the far-reaching political and judicial implications of Pakistan's 27th Constitutional Amendment.",
                 content: "The 27th Constitutional Amendment represents a significant shift in Pakistan's constitutional and judicial landscape. In this comprehensive review, the LGS Newspaper Club examines the statutory changes, judicial reform debates, and governance implications brought about by the new legislation."
@@ -445,7 +468,7 @@
                 category: "Sports",
                 date: "Thursday, December 11, 2025",
                 author: "Sports Desk",
-                images: ["article2.jpg"],
+                images: ["article2.jpg"], // <-- Rename your image file to: article2.jpg
                 summary: "The Kestrels deliver a historic victory in a thrilling football championship finale on campus.",
                 content: "In an explosive final match that kept spectators on the edge of their seats, the Kestrels claimed victory after weeks of high-intensity tournament play. Their tactical discipline, quick defensive transitions, and decisive striking secured their place as champions."
             },
@@ -455,7 +478,7 @@
                 category: "World News",
                 date: "Sunday, December 04, 2025",
                 author: "Global Affairs Desk",
-                images: ["article3.jpg"],
+                images: ["article3.jpg"], // <-- Rename your image file to: article3.jpg
                 summary: "A human rights perspective on the ongoing humanitarian crisis, civil conflict, and acute food shortages in Sudan.",
                 content: "Over 150,000 lives have been lost and more than 25 million people are suffering from severe malnutrition as civil war continues to ravage Sudan. The report highlights international relief efforts and human rights appeals."
             },
@@ -465,7 +488,7 @@
                 category: "Sports",
                 date: "Sunday, November 30, 2025",
                 author: "Sports Desk",
-                images: ["article4.jpg"],
+                images: ["article4.jpg"], // <-- Rename your image file to: article4.jpg
                 summary: "Ajmal Khan emerges victorious in a high-stakes table tennis final following an intense rally battle against Shayan Amin.",
                 content: "The campus table tennis finals showcased world-class speed and precision. Ajmal Khan secured the championship trophy after a thrilling multi-set duel against Shayan Amin."
             },
@@ -475,7 +498,7 @@
                 category: "World News",
                 date: "Friday, November 28, 2025",
                 author: "Hoorain Zahra",
-                images: ["article5.jpg"],
+                images: ["article5.jpg"], // <-- Rename your image file to: article5.jpg
                 summary: "An analytical study by Hoorain Zahra exploring regional geopolitical dynamics and border diplomacy between Afghanistan and Pakistan.",
                 content: "Written by Hoorain Zahra, this report explores diplomatic developments, border security concerns, and trade negotiations between Islamabad and Kabul, offering critical context on South Asian geopolitics."
             },
@@ -485,7 +508,7 @@
                 category: "Events",
                 date: "Friday, November 21, 2025",
                 author: "#MANNU & ABDUL HANAN",
-                images: ["article6.jpg"],
+                images: ["article6.jpg"], // <-- Rename your image file to: article6.jpg
                 summary: "Live performances by Mannu and Abdul Hanan create an unforgettable musical evening at the Euphoria Concert.",
                 content: "The annual Euphoria Concert brought electrifying performances to campus. Featuring headliners Mannu and Abdul Hanan, students gathered for an evening of live music, art, and celebration."
             },
@@ -495,7 +518,7 @@
                 category: "Campus",
                 date: "Thursday, November 20, 2025",
                 author: "Campus Beat",
-                images: ["article7.jpg"],
+                images: ["article7.jpg"], // <-- Rename your image file to: article7.jpg
                 summary: "A reflection on candidate speeches, student voter turnout, and campaign discussions following the 2025 Student Council elections.",
                 content: "With the campaigns officially wrapped up and voting closed, students reflect on candidate debates, media campaign posters, and political proposals that defined this year's Student Council elections."
             },
@@ -505,7 +528,7 @@
                 category: "Campus",
                 date: "WEDNESDAY, FEBRUARY 11 2026",
                 author: "Campus Beat",
-                images: ["article14.jpg"],
+                images: ["article14.jpg"], // <-- Rename your image file to: article14.jpg
                 summary: "Hallways finally feel alive as LGS Premier Campus updates it's interior",
                 content: "Hallways finally feel alive as LGS Premier Campus updates it's interior"
             }
