@@ -4,482 +4,618 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Search Engine Meta Tags -->
-    <title>LGS Multan Premier Campus NewsPaper Club | Official Student News</title>
-    <meta name="title" content="LGS Multan Premier Campus NewsPaper Club | Official Student News">
-    <meta name="description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025. Stay updated with campus highlights, student journalism, global affairs, and sports updates.">
-    <meta name="keywords" content="LGS Multan, LGS Newspaper Club, LGS Multan Premier Campus, Lahore Grammar School Multan, LGS News, Student Journalism Multan">
+    <!-- Primary Search Engine SEO -->
+    <title>LGS Multan Premier Campus | Newspaper Club</title>
+    <meta name="title" content="LGS Multan Premier Campus | Newspaper Club">
+    <meta name="description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Campus news, student opinions, sports, and world events. est-2025">
+    <meta name="keywords" content="LGS Multan, LGS Newspaper Club, LGS Premier Campus, Lahore Grammar School, Student Journalism, Multan School News">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    <meta name="author" content="LGS Newspaper Club">
 
-    <!-- Open Graph / Facebook / WhatsApp Preview Meta Tags -->
+    <!-- Open Graph / Facebook / WhatsApp Preview Cards -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lgsnewspaperclub.com/">
-    <meta property="og:title" content="LGS Multan Premier Campus NewsPaper Club">
-    <meta property="og:description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025. Explore student voices, news, and campus events.">
+    <meta property="og:url" content="https://lgsnewspaperclub.github.io/">
+    <meta property="og:title" content="LGS Newspaper Club | Premier Campus">
+    <meta property="og:description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. est-2025">
     <meta property="og:image" content="logo.png">
 
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter Preview Cards -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="LGS Multan Premier Campus NewsPaper Club">
-    <meta property="twitter:description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025.">
+    <meta property="twitter:title" content="LGS Newspaper Club | Premier Campus">
+    <meta property="twitter:description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. est-2025">
     <meta property="twitter:image" content="logo.png">
 
     <!-- Google Search Console Verification Placeholder -->
     <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
 
-    <!-- Structured Data JSON-LD for Google Rich Search Snippets -->
+    <!-- Google Fonts & Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* STRICT MONOCHROME ENFORCEMENT: #a6a6a6 background & #000000 text/ink */
+        body {
+            background-color: #a6a6a6 !important;
+            color: #000000 !important;
+            font-family: 'Newsreader', serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-headline {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-sans-clean {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Strict Border and Accent lines */
+        .border-monochrome {
+            border-color: #000000 !important;
+        }
+
+        /* Animated Post Card Effects */
+        .post-card {
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            background-color: #a6a6a6;
+        }
+
+        .post-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.35);
+        }
+
+        .post-card img {
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .post-card:hover img {
+            transform: scale(1.03);
+            filter: contrast(108%);
+        }
+
+        /* Modal Entrance Animation */
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .animate-modal {
+            animation: modalFadeIn 0.25s ease-out forwards;
+        }
+
+        /* Custom monochrome scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #a6a6a6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+
+        /* Custom buttons styling */
+        .mono-btn {
+            background-color: #000000;
+            color: #a6a6a6;
+            transition: all 0.2s ease;
+        }
+        .mono-btn:hover {
+            background-color: #a6a6a6;
+            color: #000000;
+            outline: 2px solid #000000;
+        }
+
+        .mono-outline-btn {
+            background-color: transparent;
+            color: #000000;
+            border: 2px solid #000000;
+            transition: all 0.2s ease;
+        }
+        .mono-outline-btn:hover, .mono-outline-btn.active {
+            background-color: #000000;
+            color: #a6a6a6;
+        }
+    </style>
+
+    <!-- Structured JSON-LD Schema for Google Search -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "NewsMediaOrganization",
-      "name": "LGS Multan Premier Campus NewsPaper Club",
-      "alternateName": "LGS Newspaper Club",
-      "url": "https://lgsnewspaperclub.com/",
-      "logo": "logo.png",
-      "description": "The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025.",
-      "foundingDate": "2025"
+      "name": "LGS Newspaper Club",
+      "alternateName": "LGS Multan Premier Campus Newspaper",
+      "url": "https://lgsnewspaperclub.github.io/",
+      "logo": "https://lgsnewspaperclub.github.io/logo.png",
+      "foundingDate": "2025",
+      "description": "The Official Website for the LGS Multan Premier Campus' NewsPaper Club."
     }
     </script>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        .font-masthead { font-family: 'Cinzel', serif; }
-        .font-serif { font-family: 'Playfair Display', Georgia, serif; }
-        .font-sans { font-family: 'Inter', sans-serif; }
-
-        .newspaper-border { border: 1px solid #18181b; }
-        .double-border-bottom { border-bottom: 3px double #18181b; }
-        .double-border-top { border-top: 3px double #18181b; }
-        
-        html { scroll-behavior: smooth; }
-    </style>
 </head>
+<body class="min-h-screen flex flex-col justify-between p-3 sm:p-6 md:p-8 max-w-7xl mx-auto border-x-2 border-monochrome">
 
-<body class="bg-[#f4f1ea] text-zinc-900 font-sans min-h-screen flex flex-col selection:bg-zinc-800 selection:text-white">
-
-    <!-- TOP UTILITY BAR -->
-    <div class="bg-zinc-900 text-zinc-300 text-xs py-1.5 px-4 border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center space-x-4">
-                <span id="current-date" class="font-medium tracking-wide">Saturday, October 17, 2026</span>
-                <span class="hidden md:inline text-zinc-600">|</span>
-                <span class="hidden md:inline font-light text-zinc-400">Official Student Publication</span>
-            </div>
-            <div class="flex items-center space-x-6 text-xs">
-                <a href="#about" class="hover:text-white transition-colors">About Us</a>
-                <a href="#latest" class="hover:text-white transition-colors">Latest Articles</a>
-                <span class="text-zinc-600">|</span>
-                <span class="text-amber-400 font-semibold tracking-wider">EST. 2025</span>
-            </div>
+    <header class="w-full border-b-4 border-monochrome pb-4 mb-6">
+        <!-- Top Metadata Bar -->
+        <div class="flex flex-col sm:flex-row justify-between items-center border-b-2 border-monochrome pb-2 text-xs font-sans-clean font-bold tracking-widest uppercase mb-4 gap-2">
+            <div>EST. 2025 • MULTAN, PAKISTAN</div>
+            <div>THE OFFICIAL STUDENT PRESS</div>
+            <div id="current-date">SATURDAY, OCTOBER 17, 2026</div>
         </div>
-    </div>
 
-    <!-- MAIN MASTHEAD HEADER -->
-    <header class="max-w-7xl mx-auto w-full px-4 pt-6 pb-4">
-        <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-4 border-b border-zinc-900 pb-6">
+        <!-- Main Masthead Banner with Logo and Centered Title -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between py-4 gap-4">
             
-            <!-- Left Logo Section -->
-            <div class="md:col-span-3 flex justify-center md:justify-start items-center">
-                <img src="logo.png" 
-                     alt="LGS Newspaper Club Logo" 
-                     class="h-24 md:h-28 w-auto object-contain max-w-full"
-                     onerror="this.onerror=null; this.outerHTML='<div class=\'h-24 md:h-28 w-48 border border-zinc-900 bg-zinc-200 flex flex-col items-center justify-center p-2 text-center rounded-sm\'><i class=\'fa-solid fa-newspaper text-zinc-700 text-2xl mb-1\'></i><span class=\'font-masthead text-xs font-bold tracking-tight text-zinc-900 leading-tight\'>LGS NEWSPAPER CLUB</span></div>';">
+            <!-- Logo Section: Scaled to fit comfortably inside left masthead boundary -->
+            <div class="w-full md:w-1/4 flex justify-center md:justify-start items-center">
+                <a href="#" class="block hover:opacity-85 transition-opacity">
+                    <img id="header-logo" 
+                         src="logo.png" 
+                         alt="LGS Newspaper Club Logo" 
+                         class="max-h-24 sm:max-h-28 md:max-h-32 w-auto object-contain"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;240\&quot; height=\&quot;100\&quot; viewBox=\&quot;0 0 240 100\&quot;&gt;&lt;rect width=\&quot;240\&quot; height=\&quot;100\&quot; fill=\&quot;%23a6a6a6\&quot; stroke=\&quot;%23000000\&quot; stroke-width=\&quot;4\&quot;/&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;40%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;900\&quot; font-size=\&quot;18\&quot; fill=\&quot;%23000000\&quot;&gt;LGS&lt;/text&gt;&lt;text x=\&quot;50%\&quot; y=\&quot;65%\&quot; dominant-baseline=\&quot;middle\&quot; text-anchor=\&quot;middle\&quot; font-family=\&quot;sans-serif\&quot; font-weight=\&quot;700\&quot; font-size=\&quot;12\&quot; fill=\&quot;%23000000\&quot;&gt;NEWSPAPER CLUB&lt;/text&gt;&lt;/svg&gt;';">
+                </a>
             </div>
 
-            <!-- Center Masthead Title -->
-            <div class="md:col-span-9 text-center md:text-left flex flex-col justify-center border-t md:border-t-0 md:border-l border-zinc-300 pt-4 md:pt-0 md:pl-6">
-                <h1 class="font-masthead text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-zinc-900 uppercase leading-none mb-2">
+            <!-- Central Masthead Main Title -->
+            <div class="w-full md:w-3/4 text-center md:text-center">
+                <h1 class="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none uppercase">
                     LGS NEWSPAPER CLUB
                 </h1>
-                <p class="font-serif italic text-zinc-700 text-sm sm:text-base md:text-lg">
+                <p class="font-serif italic text-sm sm:text-lg mt-2 font-medium tracking-wide">
                     "The voice of the students, recording history as it unfolds."
                 </p>
             </div>
         </div>
 
-        <!-- NAVIGATION LINKS -->
-        <nav class="double-border-bottom double-border-top py-2.5 my-3">
-            <div class="flex items-center justify-center space-x-8 text-xs sm:text-sm font-semibold tracking-wider uppercase">
-                <a href="#welcome" class="hover:underline underline-offset-4 text-zinc-800">WELCOME</a>
-                <span class="text-zinc-400">•</span>
-                <a href="#latest" class="hover:underline underline-offset-4 text-zinc-800">LATEST NEWS</a>
-                <span class="text-zinc-400">•</span>
-                <a href="#about" class="hover:underline underline-offset-4 text-zinc-800">ABOUT</a>
-            </div>
+        <!-- Decorative Double Rules -->
+        <div class="border-t-2 border-b border-monochrome h-1 my-3"></div>
+
+        <!-- Navigation Bar -->
+        <nav class="flex justify-center items-center gap-6 sm:gap-10 text-xs sm:text-sm font-sans-clean font-bold tracking-widest uppercase py-1">
+            <a href="#welcome" class="hover:underline underline-offset-4">Welcome</a>
+            <a href="#latest-news" class="hover:underline underline-offset-4">Latest News</a>
+            <a href="#about" class="hover:underline underline-offset-4">About</a>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="welcome" class="max-w-7xl mx-auto w-full px-4 py-6">
-        <div class="bg-zinc-200/70 border border-zinc-400 p-6 md:p-8 rounded-sm">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                <div class="md:col-span-7">
-                    <span class="text-xs uppercase tracking-widest font-bold text-zinc-600 block mb-2">
+    <main class="flex-grow space-y-10">
+
+        <!-- Welcome Banner Section -->
+        <section id="welcome" class="border-b-2 border-monochrome pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div class="md:col-span-2 space-y-3">
+                    <span class="text-xs font-sans-clean font-extrabold uppercase tracking-widest px-2 py-0.5 border border-monochrome">
                         WELCOME TO THE NEWSPAPER CLUB
                     </span>
-                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 text-zinc-900">
+                    <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
                         A closer look at the stories that shape our school.
                     </h2>
-                    <p class="text-zinc-700 text-base sm:text-lg leading-relaxed font-sans">
+                    <p class="text-lg font-serif leading-relaxed">
                         The Official Website for the LGS Multan Premier Campus' NewsPaper Club. A student-led publication sharing campus highlights, student voices, and in-depth reports.
                     </p>
                 </div>
-                <div class="md:col-span-5 md:border-l border-zinc-400 md:pl-8 flex flex-col justify-center">
-                    <span class="text-xs uppercase tracking-widest font-bold text-zinc-600 block mb-2">FROM OUR EDITORIAL TEAM</span>
-                    <blockquote class="font-serif italic text-xl md:text-2xl text-zinc-800 mb-3">
-                        "Every story deserves a voice."
-                    </blockquote>
-                    <p class="text-xs text-zinc-600 leading-relaxed">
+
+                <div class="md:col-span-1 border-t-2 md:border-t-0 md:border-l-2 border-monochrome pt-4 md:pt-0 md:pl-6 space-y-2">
+                    <span class="text-xs font-sans-clean font-bold uppercase tracking-widest">
+                        FROM OUR EDITORIAL TEAM
+                    </span>
+                    <h3 class="font-headline text-xl font-bold">
+                        Every story deserves a voice.
+                    </h3>
+                    <p class="text-sm font-serif leading-snug">
                         Exploring the news, opinions, and events that make our school community vibrant and inspired.
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- MAIN ARTICLES GRID SECTION -->
-    <main id="latest" class="max-w-7xl mx-auto w-full px-4 py-8 flex-grow">
-        <div class="flex items-center justify-between border-b-2 border-zinc-900 pb-2 mb-8">
-            <h3 class="font-masthead text-xl sm:text-2xl font-bold text-zinc-900 tracking-wide uppercase">
-                LATEST ARTICLES
-            </h3>
-            <span id="article-count-badge" class="text-xs font-semibold uppercase bg-zinc-900 text-white px-3 py-1 rounded-full">
-                7 Published Stories
-            </span>
-        </div>
+        <!-- Latest News Filter & Article Grid Header -->
+        <section id="latest-news" class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b-2 border-monochrome pb-3 gap-4">
+                <div>
+                    <h2 class="font-headline text-3xl sm:text-4xl font-black uppercase">
+                        Latest News & Articles
+                    </h2>
+                    <p class="text-sm font-sans-clean text-gray-900 mt-1">
+                        Click on any post card below to open and read the full article reader.
+                    </p>
+                </div>
 
-        <!-- CARDS CONTAINER -->
-        <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Dynamically Populated by JS -->
-        </div>
+                <!-- Category Filtering Buttons -->
+                <div class="flex flex-wrap gap-2 text-xs font-sans-clean font-bold">
+                    <button onclick="filterCategory('All')" class="mono-outline-btn active px-3 py-1 uppercase" id="filter-All">All</button>
+                    <button onclick="filterCategory('Sports')" class="mono-outline-btn px-3 py-1 uppercase" id="filter-Sports">Sports</button>
+                    <button onclick="filterCategory('Events')" class="mono-outline-btn px-3 py-1 uppercase" id="filter-Events">Events</button>
+                    <button onclick="filterCategory('World News')" class="mono-outline-btn px-3 py-1 uppercase" id="filter-World News">World News</button>
+                    <button onclick="filterCategory('Campus')" class="mono-outline-btn px-3 py-1 uppercase" id="filter-Campus">Campus</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Articles Grid -->
+            <div id="articles-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Articles rendered via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Brief History of LGS Section -->
+        <section id="lgs-history" class="border-t-4 border-monochrome pt-8 mt-12">
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="text-center space-y-2">
+                    <span class="text-xs font-sans-clean font-extrabold uppercase tracking-widest px-2 py-0.5 border border-monochrome">
+                        OUR HERITAGE & LEGACY
+                    </span>
+                    <h3 class="font-headline text-3xl sm:text-4xl font-black uppercase">
+                        A Brief History of LGS
+                    </h3>
+                </div>
+
+                <div class="border-y-2 border-monochrome py-6 space-y-4 font-serif text-base sm:text-lg leading-relaxed text-justify">
+                    <p>
+                        The Lahore Grammar School was established in January 1979. The nationalization of educational institutions in 1972 had led to an alarming decline in the standards of instruction and facilities being provided in most schools and colleges. Interventions in the realm of education were therefore, critical to arrest this abysmal state of affairs.
+                    </p>
+                    <p>
+                        In 1978 the Government announced that it would welcome initiatives in the educational sector. Taking advantage of this, a group of women from varied professional backgrounds, including education, and with the shared objective of contributing in this field, decided to set up a girls’ school.
+                    </p>
+                    <p>
+                        Today Lahore Grammar School provides education to both boys and girls till A’ Level. It has extended its network to cater to the needs of the middle income group in its Landmark Schools. LGS has branches in Islamabad, Karachi, Peshawar, Quetta, Multan, Gujranwala, Sialkot, Faisalabad and Gujrat. It offers quality education to the low income group through the Lahore Education Society School, entirely supported and funded by LGS.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Publication Section -->
+        <section id="about" class="border-t-2 border-monochrome pt-8 mt-6 mb-6">
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <h3 class="font-headline text-2xl sm:text-3xl font-bold uppercase">About the Publication</h3>
+                <div class="border-t border-b border-monochrome py-4 my-2">
+                    <p class="font-serif text-xl sm:text-2xl italic leading-relaxed">
+                        "This is the LGS Multan's Premier Campus' NewsPaper Club. est-2025"
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="bg-zinc-900 text-zinc-100 py-12 px-4 mt-12 border-t-4 border-amber-600">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="font-masthead text-2xl sm:text-3xl font-bold tracking-wider mb-4">
-                ABOUT THE PUBLICATION
-            </h3>
-            <div class="w-16 h-0.5 bg-amber-600 mx-auto mb-6"></div>
-            <p class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-serif italic mb-6">
-                This is the LGS Multan's Premier Campus' NewsPaper Club. est-2025
-            </p>
-            <div class="inline-flex items-center space-x-2 text-xs text-zinc-400 bg-zinc-800 px-4 py-2 rounded-full border border-zinc-700">
-                <i class="fa-solid fa-graduation-cap text-amber-500"></i>
-                <span>LGS Multan Premier Campus • Lahore Grammar School</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-zinc-950 text-zinc-500 text-xs py-6 px-4 border-t border-zinc-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>© 2025-2026 LGS Newspaper Club. All rights reserved.</p>
-            <p>Designed for LGS Multan Premier Campus Student Journalism.</p>
-        </div>
+    <footer class="border-t-2 border-monochrome pt-4 mt-8 flex flex-col sm:flex-row justify-between items-center text-xs font-sans-clean font-bold tracking-wider gap-2">
+        <div>© 2026 LGS NEWSPAPER CLUB. ALL RIGHTS RESERVED.</div>
+        <div>@LGSNEWSPAPERCLUB</div>
     </footer>
 
-    <!-- ARTICLE READING MODAL -->
-    <div id="article-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
-        <div class="bg-[#f4f1ea] border-2 border-zinc-900 max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl relative my-8">
+    <div id="article-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+        <div class="bg-[#a6a6a6] border-4 border-monochrome max-w-4xl w-full max-h-[92vh] overflow-y-auto p-4 sm:p-8 relative shadow-2xl animate-modal text-black my-auto">
             
-            <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 bg-zinc-900 text-white w-9 h-9 rounded-full flex items-center justify-center hover:bg-zinc-700 transition-colors shadow-lg">
-                <i class="fa-solid fa-xmark text-lg"></i>
+            <!-- Close Modal Button -->
+            <button onclick="closeModal()" class="absolute top-3 right-3 sm:top-5 sm:right-5 bg-black text-[#a6a6a6] hover:bg-[#a6a6a6] hover:text-black border-2 border-black w-10 h-10 flex items-center justify-center text-2xl font-black z-10 transition-colors">
+                ✕
             </button>
 
-            <!-- Modal Content Holder -->
-            <div id="modal-content" class="p-6 sm:p-8">
-                <!-- Content inserted via JS -->
+            <!-- Modal Body Content -->
+            <div class="space-y-6">
+                
+                <!-- Category Tag & Date -->
+                <div class="flex flex-wrap items-center justify-between border-b-2 border-monochrome pb-3 gap-2 font-sans-clean text-xs font-bold uppercase pr-10">
+                    <span id="modal-category" class="border border-monochrome px-2 py-0.5">CATEGORY</span>
+                    <span id="modal-date">DATE</span>
+                </div>
+
+                <!-- Title & Author -->
+                <div>
+                    <h2 id="modal-title" class="font-headline text-2xl sm:text-4xl md:text-5xl font-black uppercase leading-tight mb-2">
+                        ARTICLE TITLE
+                    </h2>
+                    <p id="modal-author" class="font-sans-clean text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                        BY AUTHOR
+                    </p>
+                </div>
+
+                <!-- Modal Image Container / Carousel -->
+                <div class="relative border-2 border-monochrome bg-black/10 overflow-hidden flex flex-col items-center justify-center">
+                    <img id="modal-image" src="" alt="Article cover image" class="max-h-[50vh] w-auto object-contain mx-auto">
+                    
+                    <!-- Carousel Controls (Hidden if 1 image) -->
+                    <div id="carousel-controls" class="hidden absolute inset-0 flex items-center justify-between p-2 pointer-events-none">
+                        <button onclick="prevImage(event)" class="pointer-events-auto bg-black text-[#a6a6a6] border-2 border-black w-10 h-10 font-bold hover:bg-[#a6a6a6] hover:text-black text-xl flex items-center justify-center">
+                            ❮
+                        </button>
+                        <button onclick="nextImage(event)" class="pointer-events-auto bg-black text-[#a6a6a6] border-2 border-black w-10 h-10 font-bold hover:bg-[#a6a6a6] hover:text-black text-xl flex items-center justify-center">
+                            ❯
+                        </button>
+                    </div>
+
+                    <!-- Image Counter Badge -->
+                    <div id="image-badge" class="hidden absolute bottom-2 right-2 bg-black text-[#a6a6a6] px-2 py-0.5 text-xs font-sans-clean font-bold">
+                        1 / 1
+                    </div>
+                </div>
+
+                <!-- Thumbnails Strip for Multi-Image Articles -->
+                <div id="modal-thumbnails" class="flex gap-2 overflow-x-auto pb-1 hidden">
+                    <!-- Dynamic Thumbnails inserted here -->
+                </div>
+
+                <!-- Article Content -->
+                <div id="modal-content" class="font-serif text-base sm:text-lg leading-relaxed border-t-2 border-monochrome pt-4 space-y-4">
+                    <!-- Text inserted here -->
+                </div>
+
+                <!-- Bottom Close Button -->
+                <div class="pt-4 border-t-2 border-monochrome text-right">
+                    <button onclick="closeModal()" class="mono-btn px-6 py-2 text-sm font-sans-clean font-bold uppercase tracking-wider">
+                        Close Article
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Article Data Source
+        // SVG Fallback Generator Function with safely escaped XML quotes
+        function getSvgFallback(text, detail) {
+            const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23a6a6a6" stroke="%23000000" stroke-width="6"/><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16" fill="%23000000">${text}</text><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="12" fill="%23000000">${detail || '[IMAGE PREVIEW]'}</text></svg>`;
+            return 'data:image/svg+xml;utf8,' + encodeURIComponent(svgString);
+        }
+
+        // Article Database from LGS Newspaper Club covers
         const articles = [
             {
                 id: 1,
-                title: "Pakistan's Proposed 27th Constitutional Amendment: A Shift in Political and Judicial Dynamics",
-                category: "National Affairs",
-                date: "Saturday, October 17, 2026",
-                author: "By the Editorial Board",
+                title: "PAKISTAN'S 27TH AMENDMENT: A TURNING POINT IN CONSTITUTIONAL LAW",
+                category: "Campus",
+                date: "Sunday, December 14, 2025",
+                author: "LGS Editorial Board",
                 images: ["article1.jpg"],
-                summary: "An in-depth report on the 27th Constitutional Amendment, exploring changes in military leadership, judicial structures, and local governance.",
-                content: `Pakistan is currently undergoing a pivotal political transition following the approval of the 26th Constitutional Amendment, with political leaders actively discussing a proposed 27th Amendment. The upcoming legislation aims to introduce further structural changes across governance, judiciary, and administrative domains.
-
-Key aspects under discussion include potential alterations to military leadership tenures, changes in local government powers, and adjustments to political representation within provincial assemblies. While supporters argue these steps will foster administrative efficiency and political stability, critics voice concerns over the balance of power between government branches.`
+                summary: "An in-depth legal analysis examining the far-reaching political and judicial implications of Pakistan's 27th Constitutional Amendment.",
+                content: "The 27th Constitutional Amendment represents a significant shift in Pakistan's constitutional and judicial landscape. In this comprehensive review, the LGS Newspaper Club examines the statutory changes, judicial reform debates, and governance implications brought about by the new legislation."
             },
             {
                 id: 2,
-                title: "Kestrels Fly High in the Championship",
-                category: "Sports Updates",
-                date: "Saturday, October 17, 2026",
-                author: "#Kestrels #SportsChampions",
+                title: "CHAMPIONS AT LAST: KESTRELS TAKE THE TOP FLIGHT",
+                category: "Sports",
+                date: "Thursday, December 11, 2025",
+                author: "Sports Desk",
                 images: ["article2.jpg"],
-                summary: "The Kestrels delivered an extraordinary performance in the school tournament, claiming the championship trophy with tactical excellence.",
-                content: `In an thrilling display of athleticism, teamwork, and determination, the Kestrels secured a victorious win in the recent intra-school sports championship.
-
-From the opening round to the final whistle, the team displayed superior tactical execution and high energy, captivating spectators throughout the tournament. The championship win reinforces the school's commitment to athletic excellence and sportsman spirit.`
+                summary: "The Kestrels deliver a historic victory in a thrilling football championship finale on campus.",
+                content: "In an explosive final match that kept spectators on the edge of their seats, the Kestrels claimed victory after weeks of high-intensity tournament play. Their tactical discipline, quick defensive transitions, and decisive striking secured their place as champions."
             },
             {
                 id: 3,
-                title: "The Crisis in Sudan",
-                category: "Global Affairs",
-                date: "Saturday, October 17, 2026",
-                author: "#GlobalAffairs #SudanCrisis",
+                title: "SUDAN HAVE BEEN DEVASTATED BY A CIVIL WAR WITH OVER 150,000 CIVILIANS KILLED AND 25 MILLION SUFFERING FROM FAMINE AND MALNUTRITION.",
+                category: "World News",
+                date: "Sunday, December 04, 2025",
+                author: "Global Affairs Desk",
                 images: ["article3.jpg"],
-                summary: "A critical examination of the humanitarian crisis in Sudan and the urgent international calls for peace and humanitarian aid.",
-                content: `The conflict in Sudan continues to inflict severe humanitarian challenges, displacing millions and severely straining critical infrastructure across the region. International organizations continue to advocate for peaceful diplomatic interventions and humanitarian relief corridors.
-
-This analysis provides students with an understanding of global diplomatic efforts, political stability, and the responsibility of international organizations during humanitarian emergencies.`
+                summary: "A human rights perspective on the ongoing humanitarian crisis, civil conflict, and acute food shortages in Sudan.",
+                content: "Over 150,000 lives have been lost and more than 25 million people are suffering from severe malnutrition as civil war continues to ravage Sudan. The report highlights international relief efforts and human rights appeals."
             },
             {
                 id: 4,
-                title: "Table Tennis Tournament Highlights",
-                category: "Sports & Athletics",
-                date: "Saturday, October 17, 2026",
-                author: "#TableTennis #CampusSports",
+                title: "TABLE TENNIS TOURNAMENT: AJMAL KHAN WINS THE FINAL AGAINST A COMPETITIVE MATCH WITH SHAYAN AMIN",
+                category: "Sports",
+                date: "Sunday, November 30, 2025",
+                author: "Sports Desk",
                 images: ["article4.jpg"],
-                summary: "High-energy matches and remarkable sportsmanship defined the campus table tennis tournament this season.",
-                content: `The campus table tennis championship concluded with intense final matches, showcasing exceptional skill, lightning-fast reflexes, and commendable sportsmanship from all participating students.
-
-The event brought together students from various grade levels, celebrating competition and healthy sportsmanship across the school community.`
+                summary: "Ajmal Khan emerges victorious in a high-stakes table tennis final following a intense rally battle against Shayan Amin.",
+                content: "The campus table tennis finals showcased world-class speed and precision. Ajmal Khan secured the championship trophy after a thrilling multi-set duel against Shayan Amin."
             },
             {
                 id: 5,
-                title: "Kabul & Islamabad Bilateral Relations",
-                category: "International News",
-                date: "Saturday, October 17, 2026",
-                author: "#InternationalRelations #Diplomacy",
+                title: "ARE TENSIONS RISING AGAIN BETWEEN KABUL AND ISLAMABAD?",
+                category: "World News",
+                date: "Friday, November 28, 2025",
+                author: "Hoorain Zahra",
                 images: ["article5.jpg"],
-                summary: "Analyzing diplomatic engagements, trade policies, and border security discussions between Kabul and Islamabad.",
-                content: `Diplomatic dialogues between Islamabad and Kabul remain a key focal point for regional security and economic cooperation in South Asia.
-
-Recent discussions centered on trade routes, border security protocols, and collaborative economic frameworks designed to promote regional stability and prosperity.`
+                summary: "An analytical study by Hoorain Zahra exploring regional geopolitical dynamics and border diplomacy between Afghanistan and Pakistan.",
+                content: "Written by Hoorain Zahra, this report explores diplomatic developments, border security concerns, and trade negotiations between Islamabad and Kabul, offering critical context on South Asian geopolitics."
             },
             {
                 id: 6,
-                title: "Euphoria: The Annual Music & Arts Concert",
-                category: "Campus Life",
-                date: "Saturday, October 17, 2026",
-                author: "#CampusLife #EuphoriaConcert",
+                title: "AIR FILLED WITH JOY ON EUPHORIA CONCERT #MANNU & ABDUL HANAN",
+                category: "Events",
+                date: "Friday, November 21, 2025",
+                author: "#MANNU & ABDUL HANAN",
                 images: ["article6.jpg"],
-                summary: "A night of extraordinary musical performances, art exhibitions, and vibrant student talent at the annual concert.",
-                content: `The annual student concert 'Euphoria' illuminated the campus with dynamic musical performances, artistic displays, and enthusiastic participation from the entire student body.
-
-The night showcased the creative talents of student bands, solo vocalists, and performing artists, highlighting the school's rich culture in creative arts.`
+                summary: "Live performances by Mannu and Abdul Hanan create an unforgettable musical evening at the Euphoria Concert.",
+                content: "The annual Euphoria Concert brought electrifying performances to campus. Featuring headliners Mannu and Abdul Hanan, students gathered for an evening of live music, art, and celebration."
             },
             {
                 id: 7,
-                title: "Student Council Elections Announced",
-                category: "School Announcements",
-                date: "Saturday, October 17, 2026",
-                author: "#StudentCouncil #Leadership",
+                title: "STUDENT COUNCIL ELECTIONS 2025: THE POSTERS ARE GONE, BUT THE TALK REMAINS",
+                category: "Campus",
+                date: "Thursday, November 20, 2025",
+                author: "Campus Beat",
                 images: ["article7.jpg"],
-                summary: "Candidates gear up for the upcoming elections as campaign season begins across campus.",
-                content: `The official election schedule for the upcoming Student Council has been formally announced. Student leaders are preparing their campaign platforms focused on student advocacy, school events, and community service.
-
-The campaign period will feature candidate debates, manifesto presentations, and student voting over the coming weeks.`
+                summary: "A reflection on candidate speeches, student voter turnout, and campaign discussions following the 2025 Student Council elections.",
+                content: "With the campaigns officially wrapped up and voting closed, students reflect on candidate debates, media campaign posters, and political proposals that defined this year's Student Council elections."
             }
         ];
 
-        // State variables for Image Gallery Carousel
-        let currentArticle = null;
+        let activeCategory = 'All';
+        let activeArticle = null;
         let activeImageIndex = 0;
 
-        // Generate SVG graphic fallbacks if local files are missing
-        function getSVGDataURL(title, category) {
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 600 350">
-                <rect width="600" height="350" fill="#27272a"/>
-                <rect x="20" y="20" width="560" height="310" fill="none" stroke="#52525b" stroke-width="2"/>
-                <text x="300" y="150" fill="#f4f1ea" font-family="Georgia, serif" font-size="22" font-weight="bold" text-anchor="middle">${category.toUpperCase()}</text>
-                <text x="300" y="190" fill="#a1a1aa" font-family="sans-serif" font-size="14" text-anchor="middle">LGS NEWSPAPER CLUB</text>
-            </svg>`;
-            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-        }
-
-        // Render Cards Grid
+        // Render Article Cards into Grid with Hover Animations
         function renderArticles() {
             const grid = document.getElementById('articles-grid');
+            if (!grid) return;
             grid.innerHTML = '';
 
-            articles.forEach(article => {
-                const hasMultipleImages = article.images.length > 1;
+            const filtered = activeCategory === 'All' 
+                ? articles 
+                : articles.filter(a => a.category === activeCategory);
+
+            filtered.forEach(article => {
                 const card = document.createElement('article');
-                card.className = 'bg-[#fbf9f5] border border-zinc-900 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow rounded-sm overflow-hidden';
-                
+                card.className = "post-card border-2 border-monochrome flex flex-col justify-between cursor-pointer group p-3 overflow-hidden";
+                card.onclick = () => openModal(article.id);
+
+                const hasMultipleImages = article.images.length > 1;
+                const fallbackUrl = getSvgFallback("LGS NEWSPAPER CLUB", "[IMAGE PREVIEW]");
+
                 card.innerHTML = `
-                    <div>
-                        <!-- IMAGE CONTAINER -->
-                        <div class="relative bg-zinc-800 aspect-video overflow-hidden border-b border-zinc-900 group">
+                    <div class="space-y-3">
+                        <!-- Card Image -->
+                        <div class="relative aspect-[4/3] border border-monochrome overflow-hidden bg-black/10">
                             <img src="${article.images[0]}" 
                                  alt="${article.title}" 
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                 onerror="this.onerror=null; this.src='${getSVGDataURL(article.title, article.category)}';">
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.src='${fallbackUrl}';">
                             
-                            <span class="absolute top-3 left-3 bg-zinc-900 text-white text-[10px] font-bold uppercase px-2.5 py-1 tracking-wider">
-                                ${article.category}
-                            </span>
-
                             ${hasMultipleImages ? `
-                                <span class="absolute bottom-3 right-3 bg-zinc-900/90 text-white text-[11px] font-semibold px-2 py-0.5 rounded flex items-center gap-1.5 border border-zinc-700">
-                                    <i class="fa-solid fa-images text-amber-400"></i> ${article.images.length} Photos
-                                </span>
+                                <div class="absolute top-2 right-2 bg-black text-[#a6a6a6] text-[10px] font-sans-clean font-bold px-2 py-0.5 border border-black">
+                                    📷 ${article.images.length} PHOTOS
+                                </div>
                             ` : ''}
                         </div>
 
-                        <!-- CONTENT -->
-                        <div class="p-5">
-                            <div class="flex items-center justify-between text-xs text-zinc-500 mb-2">
-                                <span>${article.date}</span>
-                                <span class="font-semibold text-zinc-700">${article.author}</span>
-                            </div>
-
-                            <h4 class="font-serif font-bold text-xl text-zinc-900 mb-3 leading-snug hover:text-amber-800 transition-colors cursor-pointer" onclick="openModal(${article.id})">
-                                ${article.title}
-                            </h4>
-
-                            <p class="text-zinc-700 text-sm leading-relaxed font-sans line-clamp-3">
-                                ${article.summary}
-                            </p>
+                        <!-- Category Tag & Date -->
+                        <div class="flex items-center justify-between text-[11px] font-sans-clean font-bold uppercase tracking-wider pt-1">
+                            <span class="border border-monochrome px-1.5 py-0.5">${article.category}</span>
+                            <span>${article.date}</span>
                         </div>
+
+                        <!-- Card Headline -->
+                        <h3 class="font-headline text-lg sm:text-xl font-bold uppercase leading-tight group-hover:underline">
+                            ${article.title}
+                        </h3>
+
+                        <!-- Short Summary -->
+                        <p class="font-serif text-xs sm:text-sm line-clamp-3 leading-snug">
+                            ${article.summary}
+                        </p>
                     </div>
 
-                    <!-- FOOTER BUTTON -->
-                    <div class="p-5 pt-0 mt-2">
-                        <button onclick="openModal(${article.id})" class="w-full py-2 bg-zinc-900 text-white text-xs font-semibold tracking-wider uppercase hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2">
-                            <span>Read Full Article</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </button>
+                    <!-- Card Footer Read Link -->
+                    <div class="pt-3 mt-3 border-t border-monochrome flex justify-between items-center text-xs font-sans-clean font-bold uppercase">
+                        <span>Read Full Story</span>
+                        <span>→</span>
                     </div>
                 `;
+
                 grid.appendChild(card);
             });
         }
 
-        // Open Modal Reader
-        function openModal(id) {
-            currentArticle = articles.find(a => a.id === id);
-            if (!currentArticle) return;
+        // Category Filter Switcher
+        function filterCategory(cat) {
+            activeCategory = cat;
+            
+            // Update button UI states
+            ['All', 'Sports', 'Events', 'World News', 'Campus'].forEach(c => {
+                const btn = document.getElementById(`filter-${c}`);
+                if (btn) {
+                    if (c === cat) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                }
+            });
+
+            renderArticles();
+        }
+
+        // Modal Reader Logic
+        function openModal(articleId) {
+            activeArticle = articles.find(a => a.id === articleId);
+            if (!activeArticle) return;
 
             activeImageIndex = 0;
-            updateModalContent();
 
-            document.getElementById('article-modal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
+            document.getElementById('modal-title').innerText = activeArticle.title;
+            document.getElementById('modal-category').innerText = activeArticle.category;
+            document.getElementById('modal-date').innerText = activeArticle.date;
+            document.getElementById('modal-author').innerText = `BY ${activeArticle.author}`;
+            document.getElementById('modal-content').innerHTML = `<p>${activeArticle.content}</p>`;
+
+            updateModalImages();
+
+            const modal = document.getElementById('article-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
 
-        // Update Modal Visual Content
-        function updateModalContent() {
-            if (!currentArticle) return;
+        function updateModalImages() {
+            if (!activeArticle) return;
 
-            const modalContent = document.getElementById('modal-content');
-            const hasMultiple = currentArticle.images.length > 1;
+            const modalImg = document.getElementById('modal-image');
+            const currentImg = activeArticle.images[activeImageIndex];
+            const fallbackUrl = getSvgFallback("ARTICLE IMAGE PREVIEW", "");
 
-            modalContent.innerHTML = `
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-800 block mb-2">
-                    ${currentArticle.category}
-                </span>
+            modalImg.src = currentImg;
+            modalImg.onerror = function() {
+                this.onerror = null;
+                this.src = fallbackUrl;
+            };
 
-                <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 mb-4 leading-tight">
-                    ${currentArticle.title}
-                </h2>
+            const controls = document.getElementById('carousel-controls');
+            const badge = document.getElementById('image-badge');
+            const thumbnailsContainer = document.getElementById('modal-thumbnails');
 
-                <div class="flex flex-wrap items-center justify-between text-xs text-zinc-600 border-y border-zinc-300 py-2.5 mb-6 gap-2">
-                    <span class="font-medium"><i class="fa-regular fa-calendar mr-1"></i>${currentArticle.date}</span>
-                    <span class="font-semibold text-zinc-800"><i class="fa-regular fa-user mr-1"></i>${currentArticle.author}</span>
-                </div>
+            if (activeArticle.images.length > 1) {
+                controls.classList.remove('hidden');
+                badge.classList.remove('hidden');
+                badge.innerText = `${activeImageIndex + 1} / ${activeArticle.images.length}`;
 
-                <!-- CAROUSEL MEDIA CONTAINER -->
-                <div class="relative bg-zinc-900 rounded-sm overflow-hidden mb-6 border border-zinc-900 group">
-                    <img id="modal-carousel-img" 
-                         src="${currentArticle.images[activeImageIndex]}" 
-                         alt="${currentArticle.title}" 
-                         class="w-full max-h-[450px] object-contain mx-auto"
-                         onerror="this.onerror=null; this.src='${getSVGDataURL(currentArticle.title, currentArticle.category)}';">
-
-                    ${hasMultiple ? `
-                        <!-- Carousel Nav Arrows -->
-                        <button onclick="changeCarouselImage(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </button>
-                        <button onclick="changeCarouselImage(1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-
-                        <!-- Counter Indicator -->
-                        <span id="carousel-counter" class="absolute bottom-3 right-3 bg-black/75 text-white text-xs px-2.5 py-1 rounded font-mono">
-                            ${activeImageIndex + 1} / ${currentArticle.images.length}
-                        </span>
-                    ` : ''}
-                </div>
-
-                ${hasMultiple ? `
-                    <!-- Thumbnail Strip -->
-                    <div class="flex gap-2 overflow-x-auto pb-4 mb-4">
-                        ${currentArticle.images.map((img, idx) => `
-                            <button onclick="setImageIndex(${idx})" class="w-16 h-12 flex-shrink-0 border-2 ${idx === activeImageIndex ? 'border-amber-600 opacity-100' : 'border-zinc-300 opacity-60'} overflow-hidden rounded-sm transition-all">
-                                <img src="${img}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='${getSVGDataURL('Thumb', '')}';">
-                            </button>
-                        `).join('')}
-                    </div>
-                ` : ''}
-
-                <!-- ARTICLE FULL TEXT -->
-                <div class="font-serif text-zinc-800 text-base sm:text-lg leading-relaxed whitespace-pre-line border-t border-zinc-200 pt-4">
-                    ${currentArticle.content}
-                </div>
-            `;
+                // Render thumbnails
+                thumbnailsContainer.classList.remove('hidden');
+                thumbnailsContainer.innerHTML = '';
+                activeArticle.images.forEach((imgSrc, idx) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = imgSrc;
+                    thumb.className = `w-14 h-14 object-cover border-2 cursor-pointer ${idx === activeImageIndex ? 'border-black opacity-100' : 'border-transparent opacity-50'}`;
+                    thumb.onclick = () => {
+                        activeImageIndex = idx;
+                        updateModalImages();
+                    };
+                    thumb.onerror = function() {
+                        this.onerror = null;
+                        this.src = getSvgFallback("", "");
+                    };
+                    thumbnailsContainer.appendChild(thumb);
+                });
+            } else {
+                controls.classList.add('hidden');
+                badge.classList.add('hidden');
+                thumbnailsContainer.classList.add('hidden');
+            }
         }
 
-        // Carousel Controls
-        function changeCarouselImage(direction) {
-            if (!currentArticle) return;
-            const total = currentArticle.images.length;
-            activeImageIndex = (activeImageIndex + direction + total) % total;
-            updateModalContent();
+        function prevImage(e) {
+            e.stopPropagation();
+            if (!activeArticle) return;
+            activeImageIndex = (activeImageIndex - 1 + activeArticle.images.length) % activeArticle.images.length;
+            updateModalImages();
         }
 
-        function setImageIndex(idx) {
-            activeImageIndex = idx;
-            updateModalContent();
+        function nextImage(e) {
+            e.stopPropagation();
+            if (!activeArticle) return;
+            activeImageIndex = (activeImageIndex + 1) % activeArticle.images.length;
+            updateModalImages();
         }
 
-        // Close Modal Reader
         function closeModal() {
-            document.getElementById('article-modal').classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-            currentArticle = null;
+            const modal = document.getElementById('article-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
 
-        // Close Modal on Background Click
-        document.getElementById('article-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
+        // Close Modal on Escape Key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
 
-        // Close Modal on Escape Key Press
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Initialize Page on DOM Load
+        // Initialize Page on DOM Ready
         window.addEventListener('DOMContentLoaded', () => {
             renderArticles();
         });
