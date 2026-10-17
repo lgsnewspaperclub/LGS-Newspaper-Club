@@ -1,797 +1,88 @@
+<!-- ... existing code ... -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#a6a6a6">
-    <meta name="description" content="LGS Newspaper Club — Independent student news, opinions, interviews, and campus events.">
+    
+    <!-- Primary Search Engine Meta Tags -->
+    <title>LGS Multan Premier Campus NewsPaper Club | Official Student News</title>
+    <meta name="title" content="LGS Multan Premier Campus NewsPaper Club | Official Student News">
+    <meta name="description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025. Stay updated with campus highlights, student journalism, global affairs, and sports updates.">
+    <meta name="keywords" content="LGS Multan, LGS Newspaper Club, LGS Multan Premier Campus, Lahore Grammar School Multan, LGS News, Student Journalism Multan">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="author" content="LGS Newspaper Club">
 
-    <title>LGS Newspaper Club | The Student Press</title>
+    <!-- Open Graph / Facebook / WhatsApp Preview Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lgsnewspaperclub.com/">
+    <meta property="og:title" content="LGS Multan Premier Campus NewsPaper Club">
+    <meta property="og:description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025. Explore student voices, news, and campus events.">
+    <meta property="og:image" content="logo.png">
 
-    <!-- Tailwind CSS for utility styling -->
+    <!-- Twitter Card Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="LGS Multan Premier Campus NewsPaper Club">
+    <meta property="twitter:description" content="The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025.">
+    <meta property="twitter:image" content="logo.png">
+
+    <!-- Google Search Console Verification Placeholder -->
+    <!-- Replace 'YOUR_VERIFICATION_CODE_HERE' with the code Google Search Console gives you -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
+
+    <!-- Structured Data JSON-LD for Google Rich Search Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "LGS Multan Premier Campus NewsPaper Club",
+      "alternateName": "LGS Newspaper Club",
+      "url": "https://lgsnewspaperclub.com/",
+      "logo": "logo.png",
+      "description": "The Official Website for the LGS Multan Premier Campus' NewsPaper Club. Est-2025.",
+      "foundingDate": "2025"
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --grey: #a6a6a6;
-            --black: #000000;
-            --line: rgba(0, 0, 0, 0.35);
-            --muted: #2c2c2c;
-            --font-serif: 'Playfair Display', Georgia, serif;
-            --font-sans: 'Inter', Arial, sans-serif;
+        /* Custom Font Assignments */
+        .font-masthead {
+            font-family: 'Cinzel', serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        .font-sans {
+            font-family: 'Inter', sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
+        /* Classic Newspaper Styling Utilities */
+        .newspaper-border {
+            border: 1px solid #18181b;
         }
-
+        .double-border-bottom {
+            border-bottom: 3px double #18181b;
+        }
+        .double-border-top {
+            border-top: 3px double #18181b;
+        }
+        
+        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
-
-        body {
-            margin: 0;
-            background: var(--grey);
-            color: var(--black);
-            font-family: var(--font-serif);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: opacity 0.15s ease;
-        }
-
-        a:hover {
-            opacity: 0.75;
-        }
-
-        /* Top Bar */
-        .topbar {
-            padding: 10px 5%;
-            border-bottom: 1px solid var(--black);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            font: 500 11px var(--font-sans);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        /* Masthead */
-        .masthead {
-            text-align: center;
-            padding: 30px 20px 25px;
-            position: relative;
-        }
-
-        .masthead-layout {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            max-width: 1180px;
-            margin: 0 auto;
-        }
-
-        .masthead-logo-container {
-            width: clamp(140px, 22vw, 280px);
-            max-height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-shrink: 0;
-        }
-
-        .masthead-logo-img {
-            width: 100%;
-            height: auto;
-            max-height: 130px;
-            object-fit: contain;
-            object-position: left center;
-        }
-
-        .masthead-title-container {
-            flex-grow: 1;
-            text-align: center;
-        }
-
-        .masthead-title {
-            font-size: clamp(32px, 5.5vw, 68px);
-            font-weight: 900;
-            letter-spacing: -1.5px;
-            text-transform: uppercase;
-            line-height: 0.95;
-            margin: 0 auto;
-            font-family: var(--font-serif);
-        }
-
-        .masthead p {
-            margin: 12px 0 0;
-            font-size: 16px;
-            font-style: italic;
-            color: var(--muted);
-        }
-
-        .masthead .rule {
-            width: 100%;
-            max-width: 1180px;
-            height: 5px;
-            border-top: 2px solid var(--black);
-            border-bottom: 1px solid var(--black);
-            margin: 22px auto 0;
-        }
-
-        /* Sticky Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px 36px;
-            padding: 12px 16px;
-            border-top: 1px solid var(--black);
-            border-bottom: 2px solid var(--black);
-            position: sticky;
-            top: 0;
-            background: var(--grey);
-            z-index: 50;
-        }
-
-        nav a {
-            font: 600 11px var(--font-sans);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 4px 0;
-        }
-
-        /* Main Container */
-        main {
-            max-width: 1180px;
-            margin: auto;
-            padding: 35px 24px 60px;
-        }
-
-        .label {
-            font: 600 10px var(--font-sans);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 6px;
-        }
-
-        /* Hero / Intro Section */
-        .intro {
-            display: grid;
-            grid-template-columns: 1.6fr 1fr;
-            gap: 40px;
-            padding-bottom: 35px;
-            border-bottom: 3px double var(--black);
-        }
-
-        .intro h2 {
-            font-size: clamp(30px, 4vw, 50px);
-            line-height: 1.08;
-            letter-spacing: -0.5px;
-            margin: 10px 0 16px;
-            font-weight: 900;
-        }
-
-        .intro .description {
-            max-width: 620px;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .intro-aside {
-            border-left: 1px solid var(--black);
-            padding-left: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .intro-aside h3 {
-            font-size: 26px;
-            line-height: 1.2;
-            margin: 10px 0 14px;
-        }
-
-        .intro-aside p {
-            font-size: 15px;
-            color: var(--muted);
-        }
-
-        /* Section Title Styling */
-        .section-title {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 8px 18px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--black);
-            margin-bottom: 28px;
-        }
-
-        .section-title h2 {
-            margin: 0;
-            font-size: clamp(26px, 3.5vw, 36px);
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .section-title span {
-            font: 500 11px var(--font-sans);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        /* Article News Grid */
-        .news-section {
-            padding: 40px 0;
-            border-bottom: 3px double var(--black);
-            scroll-margin-top: 60px;
-        }
-
-        .news-card {
-            background: rgba(0, 0, 0, 0.03);
-            border: 1px solid var(--black);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .news-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 4px 4px 0px var(--black);
-        }
-
-        .news-card-img-container {
-            width: 100%;
-            aspect-ratio: 16/11;
-            overflow: hidden;
-            border-bottom: 1px solid var(--black);
-            position: relative;
-            background: #8e8e8e;
-        }
-
-        .news-card-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(80%) contrast(110%);
-            transition: filter 0.3s ease, transform 0.3s ease;
-        }
-
-        .news-card:hover .news-card-img {
-            filter: grayscale(0%) contrast(100%);
-            transform: scale(1.02);
-        }
-
-        .news-card-body {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .news-card-title {
-            font-size: 19px;
-            font-weight: 700;
-            line-height: 1.25;
-            margin: 8px 0 10px;
-        }
-
-        .news-card-excerpt {
-            font-size: 14px;
-            color: #1a1a1a;
-            margin-bottom: 16px;
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .news-card-footer {
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px dashed var(--line);
-            font: 600 11px var(--font-sans);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Category Filters */
-        .filter-btn {
-            font: 600 11px var(--font-sans);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border: 1px solid var(--black);
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--black);
-            color: var(--grey);
-        }
-
-        /* About Section */
-        .about {
-            margin-top: 50px;
-            padding: 40px 24px;
-            text-align: center;
-            border: 2px solid var(--black);
-            background: rgba(0, 0, 0, 0.02);
-            scroll-margin-top: 60px;
-        }
-
-        .about h2 {
-            font-size: 32px;
-            margin: 8px 0 12px;
-            font-weight: 700;
-        }
-
-        .about p {
-            max-width: 720px;
-            margin: 0 auto;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        /* Reader Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 200;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            backdrop-filter: blur(2px);
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--grey);
-            border: 3px solid var(--black);
-            max-width: 780px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 30px;
-            position: relative;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.8);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-family: var(--font-sans);
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            border: 1px solid var(--black);
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--grey);
-        }
-
-        .modal-close:hover {
-            background: var(--black);
-            color: var(--grey);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 3px double var(--black);
-            padding: 30px 16px;
-            text-align: center;
-        }
-
-        footer .footer-name {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        footer p {
-            margin: 4px 0;
-        }
-
-        footer .footer-small {
-            font: 500 10px var(--font-sans);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 12px;
-        }
-
-        @media (max-width: 850px) {
-            .intro {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .intro-aside {
-                border-left: none;
-                border-top: 1px solid var(--black);
-                padding: 24px 0 0;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .topbar {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .masthead {
-                padding: 28px 14px 20px;
-            }
-
-            nav {
-                gap: 10px 18px;
-            }
-
-            main {
-                padding: 20px 16px 40px;
-            }
-
-            .modal-content {
-                padding: 20px;
-            }
-        }
     </style>
 </head>
-<body>
-
-    <!-- Top Information Bar -->
-    <div class="topbar">
-        <span>The Official Student Press</span>
-        <span id="current-date">Saturday, October 17, 2026</span>
-        <span>@LGSNEWSPAPERCLUB</span>
-    </div>
-
-    <!-- Masthead Section -->
-    <header class="masthead">
-        <div class="masthead-layout">
-            <!-- Logo aligned to fill left green boundary -->
-            <div class="masthead-logo-container">
-                <img 
-                    src="logo.png" 
-                    alt="LGS Press Crest" 
-                    class="masthead-logo-img"
-                    onerror="this.onerror=null; this.outerHTML='<svg class=\'w-full h-28 text-black\' viewBox=\'0 0 200 80\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect x=\'2\' y=\'2\' width=\'196\' height=\'76\' stroke=\'black\' stroke-width=\'2\'/><path d=\'M20 20 H80 V60 H20 Z M30 30 H70 M30 40 H70 M30 50 H55\' stroke=\'black\' stroke-width=\'2\'/><text x=\'92\' y=\'38\' font-family=\'serif\' font-weight=\'900\' font-size=\'16\' fill=\'black\'>LGS</text><text x=\'92\' y=\'54\' font-family=\'sans-serif\' font-weight=\'700\' font-size=\'10\' letter-spacing=\'1\' fill=\'black\'>NEWSPAPER CLUB</text></svg>';"
-                >
-            </div>
-
-            <!-- Centered Header Title -->
-            <div class="masthead-title-container">
-                <h1 class="masthead-title">LGS NEWSPAPER CLUB</h1>
-            </div>
-
-            <!-- Empty spacer element for desktop balance -->
-            <div class="hidden md:block w-[140px] lg:w-[280px]"></div>
-        </div>
-
-        <p>"The voice of the students, recording history as it unfolds."</p>
-        <div class="rule"></div>
-    </header>
-
-    <!-- Navigation -->
-    <nav aria-label="Main navigation">
-        <a href="#welcome">Welcome</a>
-        <a href="#latest-news">Latest News</a>
-        <a href="#about">About</a>
-    </nav>
-
-    <main>
-
-        <!-- Welcome Hero Section -->
-        <section class="intro" id="welcome">
-            <div>
-                <div class="label">Welcome to the NewsPaper Club</div>
-                <h2>A closer look at the stories that shape our school.</h2>
-                <p class="description">
-                    The Official Website for the LGS Multan Premier Campus' NewsPaper Club.
-                    A student-led publication sharing campus highlights, student voices,
-                    and in-depth reports.
-                </p>
-            </div>
-
-            <aside class="intro-aside">
-                <div class="label">From our editorial team</div>
-                <h3>Every story deserves a voice.</h3>
-                <p>
-                    Exploring the news, opinions, and events that
-                    make our school community vibrant and inspired.
-                </p>
-            </aside>
-        </section>
-
-        <!-- Latest News Section -->
-        <section class="news-section" id="latest-news">
-            <div class="section-title">
-                <h2>Latest News</h2>
-                <span>Click any article card to read full story</span>
-            </div>
-
-            <!-- Category Filter Buttons -->
-            <div class="flex flex-wrap gap-2 mb-8" id="category-filters">
-                <button class="filter-btn active" onclick="filterArticles('All')">All</button>
-                <button class="filter-btn" onclick="filterArticles('Politics')">Politics</button>
-                <button class="filter-btn" onclick="filterArticles('Sports')">Sports</button>
-                <button class="filter-btn" onclick="filterArticles('World News')">World News</button>
-                <button class="filter-btn" onclick="filterArticles('Events')">Events</button>
-                <button class="filter-btn" onclick="filterArticles('Campus')">Campus</button>
-            </div>
-
-            <!-- Responsive 3-column Article Card Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-container">
-                <!-- Article cards loaded dynamically via JS -->
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section class="about" id="about">
-            <div class="label">About the publication</div>
-            <h2>LGS Newspaper Club</h2>
-            <p>
-                This is the LGS Multan's Premier Campus' NewsPaper Club. est-2025
-            </p>
-        </section>
-
-    </main>
-
-    <!-- Reader Modal Container -->
-    <div class="modal-overlay" id="article-modal" onclick="closeModalOnOverlay(event)">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeArticleModal()" aria-label="Close modal">&times;</button>
-            <div id="modal-article-body">
-                <!-- Modal content dynamically injected -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p class="footer-name">LGS Newspaper Club</p>
-        <p>Our school. Our stories. Our perspectives.</p>
-        <p class="footer-small">Student Journalism · Est. 2025</p>
-    </footer>
-
-    <script>
-        // Helper to generate elegant SVG cover fallbacks
-        function generateSvgCover(title, date, category) {
-            var safeTitle = title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            var svgString = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380">' +
-                '<rect width="600" height="380" fill="#a6a6a6"/>' +
-                '<rect x="15" y="15" width="570" height="350" fill="none" stroke="#000000" stroke-width="2"/>' +
-                '<line x1="15" y1="55" x2="585" y2="55" stroke="#000000" stroke-width="2"/>' +
-                '<text x="35" y="40" font-family="sans-serif" font-size="12" font-weight="700" fill="#000000" letter-spacing="2">LGS NEWSPAPER CLUB</text>' +
-                '<text x="565" y="40" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#2c2c2c">' + category.toUpperCase() + '</text>' +
-                '<rect x="35" y="75" width="530" height="230" fill="#8e8e8e" stroke="#000000" stroke-width="1"/>' +
-                '<text x="300" y="130" text-anchor="middle" font-family="serif" font-size="22" font-weight="900" fill="#000000">THE STUDENT PRESS</text>' +
-                '<line x1="60" y1="145" x2="540" y2="145" stroke="#000000" stroke-width="1"/>' +
-                '<foreignObject x="50" y="155" width="500" height="140">' +
-                    '<div xmlns="http://www.w3.org/1999/xhtml" style="font-family: serif; font-size: 17px; font-weight: 800; color: #000; text-align: center; text-transform: uppercase; line-height: 1.25;">' +
-                        safeTitle +
-                    '</div>' +
-                '</foreignObject>' +
-                '<text x="35" y="335" font-family="sans-serif" font-size="11" font-weight="600" fill="#000000">' + date + '</text>' +
-                '<text x="565" y="335" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="700" fill="#000000">@LGSNEWSPAPERCLUB</text>' +
-            '</svg>';
-
-            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString);
-        }
-
-        // Clean image filenames corresponding to GitHub uploads
-        const articles = [
-            {
-                id: 1,
-                title: "PAKISTAN'S 27TH AMENDMENT: A TURNING POINT IN CONSTITUTIONAL LAW",
-                date: "SUNDAY, DECEMBER 14 2025",
-                category: "Politics",
-                image: "article1.jpg",
-                summary: "An in-depth look at Pakistan's 27th Amendment and its broad legal and political ramifications for constitutional governance.",
-                content: "The 27th Constitutional Amendment marks a significant juncture in Pakistan's legal and legislative history. Debated extensively across parliament and political circles, this amendment introduces structural changes aimed at constitutional alignment and administrative reforms. Legal experts and analysts continue to discuss its long-term impact on national institutions and federal governance.",
-                author: "@LGSNEWSPAPERCLUB"
-            },
-            {
-                id: 2,
-                title: "CHAMPIONS AT LAST: KESTRELS TAKE THE TOP FLIGHT",
-                date: "THURSDAY, DECEMBER 11 2025",
-                category: "Sports",
-                image: "article2.jpg",
-                summary: "In a riveting final football match, the Kestrels emerged victorious to secure the coveted championship title.",
-                content: "After a grueling season of high-intensity matches, team Kestrels claimed victory on the pitch in dramatic style. Demonstrating exceptional teamwork, defense, and tactical coordination, they overcame tough opposition to lift the trophy. Supporters celebrated enthusiastically on campus as the team cemented their legacy in school sports history.",
-                author: "@LGSNEWSPAPERCLUB"
-            },
-            {
-                id: 3,
-                title: "SUDAN HAVE BEEN DEVASTATED BY A CIVIL WAR WITH OVER 150,000 CIVILIANS KILLED AND 25 MILLION SUFFERING FROM FAMINE AND MALNUTRITION.",
-                date: "SUNDAY, DECEMBER 04 2025",
-                category: "World News",
-                image: "article3.jpg",
-                summary: "A humanitarian crisis unfolds in Sudan as civil conflict causes immense displacement, food scarcity, and loss of life.",
-                content: "The escalating conflict in Sudan has led to one of the world's most severe humanitarian crises. With millions facing extreme food insecurity and displacement from regions like Darfur and Khartoum, international relief agencies are urgently calling for aid and ceasefire agreements. This report sheds light on the grave human toll and the desperate need for global awareness.",
-                author: "@LGSNEWSPAPERCLUB"
-            },
-            {
-                id: 4,
-                title: "TABLE TENNIS TOURNAMENT: AJMAL KHAN WINS THE FINAL AGAINST A COMPETITIVE MATCH WITH SHAYAN AMIN",
-                date: "SUNDAY, NOVEMBER 30 2025",
-                category: "Sports",
-                image: "article4.jpg",
-                summary: "Ajmal Khan delivers an outstanding performance in the Table Tennis finals against Shayan Amin to take home the crown.",
-                content: "The campus table tennis finals delivered nail-biting suspense as Ajmal Khan faced off against Shayan Amin in a thrilling showdown. Both players displayed incredible reflexes, powerful smashes, and masterful rallies. In the final sets, Ajmal Khan pulled ahead to seal a well-deserved victory amidst roaring applause.",
-                author: "@LGSNEWSPAPERCLUB"
-            },
-            {
-                id: 5,
-                title: "ARE TENSIONS RISING AGAIN BETWEEN KABUL AND ISLAMABAD ?",
-                date: "FRIDAY, NOVEMBER 28 2025",
-                category: "World News",
-                image: "article5.jpg",
-                summary: "Analyzing diplomatic relations and border tensions between Afghanistan and Pakistan.",
-                content: "Cross-border security issues and diplomatic friction have once again brought relations between Kabul and Islamabad into sharp focus. Regional security experts weigh in on border management, trade disruptions, and strategic dialogue efforts aimed at restoring stability and cooperation along the Durand Line.",
-                author: "Hoorain Zahra"
-            },
-            {
-                id: 6,
-                title: "AIR FILLED WITH JOY ON EUPHORIA CONCERT",
-                date: "FRIDAY, NOVEMBER 21 2025",
-                category: "Events",
-                image: "article6.jpg",
-                summary: "Students and music lovers were treated to an exhilarating night featuring Mannu and Abdul Hanan.",
-                content: "The Euphoria Concert lit up the campus with electrifying performances by hit artists Mannu and Abdul Hanan. From soulful acoustic renditions to energetic stage performances, the crowd chanted along under brilliant stage lighting, making it an unforgettable night of music and celebration for all attendees.",
-                author: "#MANNU & ABDUL HANAN"
-            },
-            {
-                id: 7,
-                title: "STUDENT COUNCIL ELECTIONS 2025: THE POSTERS ARE GONE, BUT THE TALK REMAINS",
-                date: "THURSDAY, NOVEMBER 20 2025",
-                category: "Campus",
-                image: "article7.jpg",
-                summary: "Campaign season concludes as students reflect on speeches, candidate promises, and electoral outcomes.",
-                content: "With campaign posters coming down across campus walls, the energy surrounding the Student Council Elections 2025 remains high. Candidates delivered impassioned speeches at the podium, addressing key student interests ranging from extracurriculars to campus facilities. The campus now eagerly awaits the results and implementation of campaign promises.",
-                author: "@LGSNEWSPAPERCLUB"
-            }
-        ];
-
-        let currentCategory = 'All';
-
-        // Render articles into the DOM
-        function renderArticles() {
-            const container = document.getElementById('articles-container');
-            const filtered = currentCategory === 'All' 
-                ? articles 
-                : articles.filter(a => a.category === currentCategory);
-
-            if (filtered.length === 0) {
-                container.innerHTML = `
-                    <div class="col-span-full text-center py-12 text-slate-700 font-sans">
-                        No articles found in this category.
-                    </div>
-                `;
-                return;
-            }
-
-            container.innerHTML = filtered.map(article => {
-                const fallbackSvg = generateSvgCover(article.title, article.date, article.category);
-                return `
-                <article class="news-card" onclick="openArticleModal(${article.id})">
-                    <div class="news-card-img-container">
-                        <img 
-                            src="${article.image}" 
-                            alt="${article.title}" 
-                            class="news-card-img"
-                            onerror="this.onerror=null; this.src='${fallbackSvg}';"
-                        >
-                    </div>
-                    <div class="news-card-body">
-                        <div class="label">${article.category}</div>
-                        <h3 class="news-card-title">${article.title}</h3>
-                        <p class="news-card-excerpt">${article.summary}</p>
-                        <div class="news-card-footer">
-                            <span>By ${article.author}</span>
-                            <span>${article.date.split(' ')[0]}</span>
-                        </div>
-                    </div>
-                </article>
-            `}).join('');
-        }
-
-        // Category filter click handler
-        function filterArticles(category) {
-            currentCategory = category;
-            
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => {
-                if (btn.textContent.trim() === category) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-
-            renderArticles();
-        }
-
-        // Modal reader handlers
-        function openArticleModal(id) {
-            const article = articles.find(a => a.id === id);
-            if (!article) return;
-
-            const fallbackSvg = generateSvgCover(article.title, article.date, article.category);
-            const modalBody = document.getElementById('modal-article-body');
-            modalBody.innerHTML = `
-                <div class="label mb-1">${article.category}</div>
-                <h2 class="text-2xl sm:text-3xl font-bold font-serif mb-2 leading-tight">${article.title}</h2>
-                <div class="text-xs uppercase font-sans tracking-widest text-slate-800 mb-6 pb-2 border-b border-black flex justify-between flex-wrap gap-2">
-                    <span>By ${article.author}</span>
-                    <span>${article.date}</span>
-                </div>
-                <div class="mb-6 border border-black overflow-hidden bg-neutral-800">
-                    <img 
-                        src="${article.image}" 
-                        alt="${article.title}" 
-                        class="w-full h-auto object-contain mx-auto max-h-[500px]"
-                        onerror="this.onerror=null; this.src='${fallbackSvg}';"
-                    >
-                </div>
-                <div class="text-base sm:text-lg leading-relaxed text-slate-900 space-y-4 font-serif">
-                    <p>${article.content}</p>
-                </div>
-            `;
-
-            document.getElementById('article-modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeArticleModal() {
-            document.getElementById('article-modal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function closeModalOnOverlay(e) {
-            if (e.target.id === 'article-modal') {
-                closeArticleModal();
-            }
-        }
-
-        // Initialize on page load
-        window.onload = function() {
-            renderArticles();
-        };
-    </script>
-</body>
-</html>
+<!-- ... existing code ... -->
