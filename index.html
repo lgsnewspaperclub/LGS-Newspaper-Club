@@ -4,94 +4,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Newspaper</title>
+    <meta name="theme-color" content="#a6a6a6">
+    <meta name="description" content="LGS Newspaper Club — school news, student opinions, interviews and events.">
+
+    <title>LGS Newspaper Club</title>
+
     <style>
+        :root {
+            --grey: #a6a6a6;
+            --black: #000000;
+            --line: rgba(0, 0, 0, 0.45);
+            --muted: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #f4f4f4;
-            color: #222;
+            background: var(--grey);
+            color: var(--black);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.6;
         }
 
-        header {
-            background: #172554;
-            color: white;
-            text-align: center;
-            padding: 30px 15px;
-        }
-
-        nav {
-            background: #1e293b;
-            padding: 12px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 12px;
+        a {
+            color: inherit;
             text-decoration: none;
         }
 
-        main {
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 20px;
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
-        article {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
+        .topbar {
+            padding: 10px 5%;
+            border-bottom: 1px solid var(--black);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            font: 11px Arial, sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .masthead {
+            text-align: center;
+            padding: 42px 20px 34px;
+        }
+
+        .masthead .eyebrow {
+            font: bold 11px Arial, sans-serif;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .masthead h1 {
+            margin: 15px 0 5px;
+            font-size: clamp(36px, 7vw, 76px);
+            line-height: 1;
+            letter-spacing: -2px;
+            font-weight: 900;
+        }
+
+        .masthead p {
+            margin: 14px 0 0;
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        .masthead .rule {
+            width: 100%;
+            max-width: 680px;
+            height: 5px;
+            border-top: 2px solid var(--black);
+            border-bottom: 1px solid var(--black);
+            margin: 25px auto 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 32px;
+            padding: 14px 16px;
+            border-top: 1px solid var(--black);
+            border-bottom: 2px solid var(--black);
+        }
+
+        nav a {
+            font: bold 11px Arial, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 24px 60px;
+        }
+
+        .label {
+            font: bold 10px Arial, sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 35px;
+            padding-bottom: 35px;
+            border-bottom: 3px double var(--black);
+        }
+
+        .intro h2 {
+            font-size: clamp(34px, 5vw, 57px);
+            line-height: 1.08;
+            letter-spacing: -1px;
+            margin: 12px 0;
+        }
+
+        .intro .description {
+            max-width: 620px;
+            font-size: 17px;
+        }
+
+        .intro-aside {
+            border-left: 1px solid var(--black);
+            padding-left: 26px;
+        }
+
+        .intro-aside h3 {
+            font-size: 27px;
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .section {
+            padding: 32px 0;
+            border-bottom: 1px solid var(--black);
+            scroll-margin-top: 20px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--black);
+            margin-bottom: 22px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: clamp(25px, 4vw, 34px);
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            font: 10px Arial, sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .article {
+            min-width: 0;
+            padding-right: 20px;
+            border-right: 1px solid var(--line);
+        }
+
+        .article:last-child {
+            padding-right: 0;
+            border-right: none;
+        }
+
+        .article h3 {
+            font-size: 23px;
+            line-height: 1.22;
+            margin: 10px 0;
+        }
+
+        .article p {
+            font-size: 15px;
+            margin: 8px 0;
+        }
+
+        .placeholder {
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .about {
+            margin-top: 32px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 2px solid var(--black);
+        }
+
+        .about h2 {
+            font-size: 30px;
+            margin: 8px 0;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: 10px auto 0;
         }
 
         footer {
+            border-top: 3px double var(--black);
+            padding: 26px 16px;
             text-align: center;
-            padding: 20px;
-            background: #172554;
-            color: white;
+        }
+
+        footer .footer-name {
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .footer-small {
+            font: 10px Arial, sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 700px) {
+            .topbar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .masthead {
+                padding: 32px 14px 25px;
+            }
+
+            .masthead h1 {
+                letter-spacing: -1px;
+            }
+
+            nav {
+                gap: 14px 20px;
+            }
+
+            main {
+                padding: 24px 18px 40px;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .intro-aside {
+                border-left: none;
+                border-top: 1px solid var(--black);
+                padding: 20px 0 0;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .article,
+            .article:last-child {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 0 0 18px;
+            }
+
+            .article:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>The School Newspaper</h1>
-        <p>Your school's news, stories and ideas.</p>
+    <div class="topbar">
+        <span>Independent Student Journalism</span>
+        <span>LGS Newspaper Club</span>
+    </div>
+
+    <header class="masthead">
+        <div class="eyebrow">The Student Press</div>
+        <h1>LGS Newspaper Club</h1>
+        <p>Our school. Our stories. Our perspectives.</p>
+        <div class="rule"></div>
     </header>
 
-    <nav>
+    <nav aria-label="Main navigation">
         <a href="#latest">Latest News</a>
-        <a href="#features">Features</a>
-        <a href="#about">About Us</a>
+        <a href="#opinions">Opinions</a>
+        <a href="#features">Features &amp; Interviews</a>
+        <a href="#events">School Events</a>
+        <a href="#about">About</a>
     </nav>
 
     <main>
-        <section id="latest">
-            <h2>Latest News</h2>
-            <article>
-                <h3>Welcome to Our Newspaper</h3>
-                <p>We're launching our online newspaper to share school news, achievements and student perspectives.</p>
-            </article>
+
+        <section class="intro" id="latest">
+            <div>
+                <div class="label">Welcome to the newsroom</div>
+                <h2>A closer look at the stories that shape our school.</h2>
+                <p class="description">
+                    The online home of LGS Newspaper Club.
+                    A student-led publication for school news, ideas,
+                    conversations and the moments worth remembering.
+                </p>
+            </div>
+
+            <aside class="intro-aside">
+                <div class="label">From our newsroom</div>
+                <h3>Every story deserves a voice.</h3>
+                <p>
+                    Exploring the people, opinions and events that
+                    make our school community what it is.
+                </p>
+            </aside>
         </section>
 
-        <section id="features">
-            <h2>Features</h2>
-            <article>
-                <h3>Student Voices</h3>
-                <p>Ideas, opinions and creative work from our school community.</p>
-            </article>
+        <section class="section" id="opinions">
+            <div class="section-title">
+                <h2>Student Opinions</h2>
+                <span>Ideas &amp; perspectives</span>
+            </div>
+
+            <div class="article-grid">
+                <article class="article">
+                    <div class="label">Commentary</div>
+                    <h3>Student Voices</h3>
+                    <p>Ideas and perspectives on the subjects that matter to students.</p>
+                    <p class="placeholder">Your articles will go here.</p>
+                </article>
+
+                <article class="article">
+                    <div class="label">Discussion</div>
+                    <h3>Different Points of View</h3>
+                    <p>Thoughtful arguments and respectful conversations from our community.</p>
+                    <p class="placeholder">Your articles will go here.</p>
+                </article>
+
+                <article class="article">
+                    <div class="label">Open Column</div>
+                    <h3>Food for Thought</h3>
+                    <p>Fresh perspectives on school life and the wider world.</p>
+                    <p class="placeholder">Your articles will go here.</p>
+                </article>
+            </div>
         </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are a student-led newspaper sharing stories and updates from our school.</p>
+        <section class="section" id="features">
+            <div class="section-title">
+                <h2>Features &amp; Interviews</h2>
+                <span>People &amp; stories</span>
+            </div>
+
+            <div class="article-grid">
+                <article class="article">
+                    <div class="label">Interview</div>
+                    <h3>In Conversation</h3>
+                    <p>Conversations with interesting people from our school community.</p>
+                    <p class="placeholder">Your interviews will go here.</p>
+                </article>
+
+                <article class="article">
+                    <div class="label">Student Spotlight</div>
+                    <h3>Beyond the Classroom</h3>
+                    <p>Discovering the talent, ideas and achievements of our students.</p>
+                    <p class="placeholder">Your features will go here.</p>
+                </article>
+
+                <article class="article">
+                    <div class="label">Long Read</div>
+                    <h3>Stories Worth Telling</h3>
+                    <p>People and experiences that deserve a closer look.</p>
+                    <p class="placeholder">Your features will go here.</p>
+                </article>
+            </div>
         </section>
+
+        <section class="section" id="events">
+            <div class="section-title">
+                <h2>School Events</h2>
+                <span>Life around campus</span>
+            </div>
+
+            <div class="article-grid">
+                <article class="article">
+                    <div class="label">Campus News</div>
+                    <h3>Around Our School</h3>
+                    <p>News and updates from across our school community.</p>
+                    <p class="placeholder">Your event coverage will go here.</p>
+                </article>
+
+                <article class="article">
+                    <div class="label">Highlights</div>
+                    <h3>Moments to Remember</h3>
+                    <p>Looking back at the events and experiences that brought us together.</p>
+                    <p class="placeholder">Your event coverage will go here.</p>
+                </article>
+
+                <article class="article">
+                    <div class="label">Announcements</div>
+                    <h3>What's Coming Up?</h3>
+                    <p>A place for upcoming activities and important school announcements.</p>
+                    <p class="placeholder">Your updates will go here.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="label">About the publication</div>
+            <h2>LGS Newspaper Club</h2>
+            <p>
+                A student-led publication sharing school news,
+                student opinions, interviews and events.
+                We aim to inform, encourage discussion and give
+                our school community a platform for its stories.
+            </p>
+        </section>
+
     </main>
 
     <footer>
-        <p>© 2026 The School Newspaper</p>
+        <p class="footer-name">LGS Newspaper Club</p>
+        <p>Our school. Our stories. Our perspectives.</p>
+        <p class="footer-small">Student Journalism · Est. LGS Newspaper Club</p>
     </footer>
 
 </body>
 </html>
+
