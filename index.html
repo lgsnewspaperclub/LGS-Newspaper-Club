@@ -43,6 +43,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        /* Enable Smooth Scrolling Animation for Page Navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* STRICT MONOCHROME ENFORCEMENT: #a6a6a6 background & #000000 text/ink */
         body {
             background-color: #a6a6a6 !important;
@@ -166,12 +171,12 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between p-3 sm:p-6 md:p-8 max-w-7xl mx-auto border-x-2 border-monochrome selection:bg-black selection:text-[#a6a6a6]">
 
-    <header class="w-full border-b-4 border-monochrome pb-4 mb-8">
+    <header id="welcome" class="w-full border-b-4 border-monochrome pb-4 mb-8">
         <!-- Top Metadata Bar -->
         <div class="flex flex-col sm:flex-row justify-between items-center border-b-2 border-monochrome pb-2.5 text-xs font-sans-clean font-bold tracking-widest uppercase mb-5 gap-2">
             <div>EST. 2025 • MULTAN, PAKISTAN</div>
             <div class="hidden md:block">THE OFFICIAL LGS Newspaper Club</div>
-            <div id="current-date">SATURDAY, OCTOBER 17, 2026</div>
+            <div id="current-date">SUNDAY, OCTOBER 18, 2026</div>
         </div>
 
         <!-- Main Masthead Banner with Logo and Centered Title -->
@@ -179,7 +184,7 @@
             
             <!-- Logo Section: Left masthead boundary with newspaper icon and LGS Crest -->
             <div class="w-full md:w-1/4 flex justify-center md:justify-start items-center gap-3">
-                <a href="#" class="block hover:opacity-85 transition-opacity focus:outline-none" aria-label="LGS Newspaper Club Home">
+                <a href="#welcome" class="block hover:opacity-85 transition-opacity focus:outline-none" aria-label="LGS Newspaper Club Home">
                     <img id="header-logo" 
                          src="logo.png" 
                          alt="LGS Newspaper Club Logo" 
@@ -188,7 +193,7 @@
                 </a>
                 
                 <!-- Official Lahore Grammar School Crest -->
-                <a href="#" class="block hover:opacity-85 transition-opacity focus:outline-none" aria-label="Lahore Grammar School Official Crest">
+                <a href="#welcome" class="block hover:opacity-85 transition-opacity focus:outline-none" aria-label="Lahore Grammar School Official Crest">
                     <img id="lgs-crest-logo" 
                          src="Lahore_Grammar_School_logo.png" 
                          alt="Lahore Grammar School Crest" 
@@ -282,7 +287,7 @@
                 <h3 class="font-headline text-2xl sm:text-3xl font-bold uppercase tracking-wide">About the Publication</h3>
                 <div class="border-t border-b border-monochrome py-6 my-2 px-4">
                     <p class="font-serif text-xl sm:text-2xl italic leading-relaxed">
- Operating entirely under a passionate, student-led team, the LGS Newspaper Club serves as the primary journalistic voice for LGS Multan Premier Campus. Our dedicated roster of editors, journalists, and photographers work tirelessly to capture the pulse of school life—reporting on everything from daily campus news and high-stakes sports fixtures to critical world events, ensuring that every story is recorded as history unfolds.
+                        Operating entirely under a passionate, student-led team, the LGS Newspaper Club serves as the primary journalistic voice for LGS Multan Premier Campus. Our dedicated roster of editors, journalists, and photographers works tirelessly to capture the pulse of school life—reporting on everything from daily campus news and high-stakes sports fixtures to critical world events, ensuring that every story is recorded as history unfolds.
                     </p>
                 </div>
             </div>
