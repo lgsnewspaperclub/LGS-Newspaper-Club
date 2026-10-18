@@ -291,7 +291,12 @@
 
     <footer class="border-t-2 border-monochrome pt-6 mt-12 flex flex-col sm:flex-row justify-between items-center text-xs font-sans-clean font-bold tracking-wider gap-3">
         <div>© 2026 LGS NEWSPAPER CLUB. ALL RIGHTS RESERVED.</div>
-        <div>@LGSNEWSPAPERCLUB</div>
+        <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <a href="https://instagram.com/lgsnewspaperclub" target="_blank" rel="noopener noreferrer" class="hover:underline">@lgsnewspaperclub</a>
+        </div>
         <div class="w-full text-center border-t border-monochrome/40 pt-3 mt-1 sm:border-t-0 sm:pt-0 sm:mt-0 sm:w-auto text-gray-900">
             WEBSITE CREDITS: MUHAMMAD ABDULLAH N.(A2 LEVEL)
         </div>
@@ -373,29 +378,6 @@
         }
 
         // Article Database from LGS Newspaper Club covers
-        // ---------------------------------------------------------------------
-        // IMAGE FILE NAMING GUIDE:
-        // Save your image files in the same folder as this index.html file 
-        // with the exact names listed in the 'images' array below:
-        //
-        // Article 16: article16.jpg
-        // Article 17: article17.jpg
-        // Article 8:  article8.jpg
-        // Article 9:  article9.jpg
-        // Article 10: article10.jpg
-        // Article 11: article11.jpg
-        // Article 12: article12.jpg
-        // Article 13: article13.jpg
-        // Article 1:  article1_1.jpg, article1_2.jpg, article1_3.jpg, article1_4.jpg
-        // Article 2:  article2.jpg
-        // Article 3:  article3.jpg
-        // Article 4:  article4.jpg
-        // Article 5:  article5_1.jpg, article5_2.jpg, article5_3.jpg, article5_4.jpg
-        // Article 6:  article6.jpg
-        // Article 7:  article7.jpg
-        // Article 14: article14_1.jpg to article14_6.jpg
-        // Article 15: article15.jpg
-        // ---------------------------------------------------------------------
         const articles = [
             {
                 id: 16,
@@ -403,7 +385,7 @@
                 category: "Campus",
                 date: "FRIDAY, NOVEMBER 21 2025",
                 author: "LGS Newspaper Club",
-                images: ["article16.jpg"], // <-- Save image file as: article16.jpg
+                images: ["article16.jpg"],
                 summary: "LGS Premier Campus debuted its first major social event, Tambola 4.0, bringing together students and faculty for an unforgettable evening.",
                 content: "LGS Premier Campus debuted its first event, Tambola 4.0, on September 20th, 2025. The event brought high energy, music, and excitement as students gathered to participate in the campus tradition."
             },
@@ -413,7 +395,7 @@
                 category: "Campus",
                 date: "THURSDAY, NOVEMBER 20 2025",
                 author: "LGS Newspaper Club",
-                images: ["article17.jpg"], // <-- Save image file as: article17.jpg
+                images: ["article17.jpg"],
                 summary: "LGS Premier Campus students hold a vibrant Urdu Mushaira celebration showcasing student literary expression and classical poetry.",
                 content: "In spite of Urdu Week, LGS Premier Campus students came together to host a traditional Urdu Mushaira. The event featured expressive poetry recitations, literary discussions, and artistic performances by the A Level students."
             },
