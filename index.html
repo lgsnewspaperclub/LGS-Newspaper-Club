@@ -39,7 +39,7 @@
     <!-- Google Fonts & Tailwind CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -52,8 +52,15 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Bold condensed newspaper headline font matching masthead graphics */
+        .font-masthead {
+            font-family: 'Oswald', 'Impact', 'Arial Black', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
         .font-headline {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Oswald', 'Arial Black', sans-serif;
+            letter-spacing: -0.01em;
         }
 
         .font-sans-clean {
@@ -192,7 +199,7 @@
 
             <!-- Central Masthead Main Title -->
             <div class="w-full md:w-3/4 text-center">
-                <h1 class="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none uppercase">
+                <h1 class="font-masthead text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none uppercase text-black">
                     LGS NEWSPAPER CLUB
                 </h1>
                 <p class="font-serif italic text-sm sm:text-lg mt-3 font-medium tracking-wide max-w-xl mx-auto">
