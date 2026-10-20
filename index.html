@@ -98,7 +98,7 @@
         }
 
         /* Ergonomic Focus & Touch States */
-        a:focus-visible, button:focus-visible {
+        a:focus-visible, button:focus-visible, select:focus-visible {
             outline: 2px solid #000000;
             outline-offset: 2px;
         }
@@ -176,7 +176,7 @@
         <div class="flex flex-col sm:flex-row justify-between items-center border-b-2 border-monochrome pb-2.5 text-xs font-sans-clean font-bold tracking-widest uppercase mb-5 gap-2">
             <div>EST. 2025 • MULTAN, PAKISTAN</div>
             <div class="hidden md:block">THE OFFICIAL LGS Newspaper Club</div>
-            <div id="current-date">SUNDAY, OCTOBER 18, 2026</div>
+            <div id="current-date">TUESDAY, OCTOBER 20, 2026</div>
         </div>
 
         <!-- Main Masthead Banner with Logo and Centered Title -->
@@ -229,7 +229,7 @@
 
         <!-- Latest News Filter & Article Grid Header -->
         <section id="latest-news" class="space-y-8">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b-2 border-monochrome pb-4 gap-4">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end border-b-2 border-monochrome pb-4 gap-4">
                 <div>
                     <h2 class="font-headline text-3xl sm:text-4xl font-black uppercase tracking-tight">
                         Latest News & Articles
@@ -239,13 +239,24 @@
                     </p>
                 </div>
 
-                <!-- Category Filtering Buttons -->
-                <div class="flex flex-wrap gap-2 text-xs font-sans-clean font-bold">
-                    <button onclick="filterCategory('All')" class="mono-outline-btn active px-3.5 py-1.5 uppercase" id="filter-All">All</button>
-                    <button onclick="filterCategory('Sports')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-Sports">Sports</button>
-                    <button onclick="filterCategory('Events')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-Events">Events</button>
-                    <button onclick="filterCategory('World News')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-World News">World News</button>
-                    <button onclick="filterCategory('Campus')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-Campus">Campus</button>
+                <!-- Filters & Sorting Control Bar -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Category Filtering Buttons -->
+                    <div class="flex flex-wrap gap-2 text-xs font-sans-clean font-bold">
+                        <button onclick="filterCategory('All')" class="mono-outline-btn active px-3.5 py-1.5 uppercase" id="filter-All">All</button>
+                        <button onclick="filterCategory('Sports')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-Sports">Sports</button>
+                        <button onclick="filterCategory('Events')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-Events">Events</button>
+                        <button onclick="filterCategory('World News')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-World News">World News</button>
+                        <button onclick="filterCategory('Campus')" class="mono-outline-btn px-3.5 py-1.5 uppercase" id="filter-Campus">Campus</button>
+                    </div>
+
+                    <!-- Sort By Date Dropdown Filter -->
+                    <div class="flex items-center gap-1.5">
+                        <select id="sort-select" onchange="changeSortOrder()" class="mono-outline-btn px-3 py-1.5 text-xs font-sans-clean font-bold uppercase cursor-pointer bg-[#a6a6a6]">
+                            <option value="newest" selected>Newest to Oldest</option>
+                            <option value="oldest">Oldest to Newest</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -382,13 +393,14 @@
             return 'data:image/svg+xml;utf8,' + encodeURIComponent(svgString);
         }
 
-        // Article Database from LGS Newspaper Club covers
+        // Article Database from LGS Newspaper Club covers (with rawDate for sorting)
         const articles = [
             {
                 id: 16,
                 title: "LGS PREMIER CAMPUS DEBUTS IT'S FIRST EVENT: TAMBOLA 4.0",
                 category: "Campus",
                 date: "FRIDAY, NOVEMBER 21 2025",
+                rawDate: new Date("2025-11-21"),
                 author: "LGS Newspaper Club",
                 images: ["article16.jpg"],
                 summary: "LGS Premier Campus debuted its first major social event, Tambola 4.0, bringing together students and faculty for an unforgettable evening.",
@@ -399,6 +411,7 @@
                 title: "LGS COMES ALIVE WITH POETRY: STUDENTS HOST URDU MUSHAIRA",
                 category: "Campus",
                 date: "THURSDAY, NOVEMBER 20 2025",
+                rawDate: new Date("2025-11-20"),
                 author: "LGS Newspaper Club",
                 images: ["article17.jpg"],
                 summary: "LGS Premier Campus students hold a vibrant Urdu Mushaira celebration showcasing student literary expression and classical poetry.",
@@ -409,6 +422,7 @@
                 title: "LGS DEBATE MOOT COURT: YOUNG LEGAL MINDS COMPETE IN TODAY'S TERRIFIC MOOT COMPETITION",
                 category: "Campus",
                 date: "FRIDAY, DECEMBER 12 2025",
+                rawDate: new Date("2025-12-12"),
                 author: "LGS Newspaper Club",
                 images: ["article15.jpg"],
                 summary: "Young legal minds at LGS Premier Campus showcase their advocacy and argumentative prowess in today's terrific moot court competition.",
@@ -419,6 +433,7 @@
                 title: "AT LEAST 67 PALESTINIAN CHILDREN KILLED IN GAZA SINCE 'CEASEFIRE' BEGAN: UN",
                 category: "World News",
                 date: "SATURDAY, NOVEMBER 22 2025",
+                rawDate: new Date("2025-11-22"),
                 author: "LGS Newspaper Club",
                 images: ["article8.jpg"],
                 summary: "AT LEAST 67 PALESTINIAN CHILDREN KILLED IN GAZA SINCE 'CEASEFIRE' BEGAN: UNICEF says baby girl among several children killed this week as Israel carried out a wave of bombings despite truce.",
@@ -429,6 +444,7 @@
                 title: "A DISPUTE AROSE AMONG THE STUDENTS DUE TO A \"CONFIDENTIAL- REASON\" WHERE AS EXPECTED MORE PEOPLE WERE ENJOYING THE 'SHOW' RATHER THAN COOLING THE SITUATION DOWN",
                 category: "Campus",
                 date: "SATURDAY, NOVEMBER 22 2025",
+                rawDate: new Date("2025-11-22"),
                 author: "LGS Newspaper Club",
                 images: ["article9.jpg"],
                 summary: "A dispute arose among the students due to a \"confidential- reason\" where as expected more people were enjoying the 'show' rather than cooling the situation down",
@@ -439,6 +455,7 @@
                 title: "SPORTS FIESTA: CRICKET TOURNAMENT STOPPED DUE TO A DISPUTE BETWEEN THE TEAMS",
                 category: "Sports",
                 date: "MONDAY, DECEMBER 15 2025",
+                rawDate: new Date("2025-12-15"),
                 author: "LGS Newspaper Club",
                 images: ["article10.jpg"],
                 summary: "Sports Fiesta: Cricket tournament stopped due to a dispute between the teams",
@@ -449,6 +466,7 @@
                 title: "BONFIRE 2K26",
                 category: "Events",
                 date: "SUNDAY, FEBRUARY 1 2026",
+                rawDate: new Date("2026-02-01"),
                 author: "LGS Newspaper Club",
                 images: ["article11.jpg"],
                 summary: "Bonfire 2k26 celebration at LGS Premier Campus.",
@@ -459,6 +477,7 @@
                 title: "LGS PREMIER CAMPUS: WELCOME 2025",
                 category: "Events",
                 date: "TUESDAY, DECEMBER 23 2025",
+                rawDate: new Date("2025-12-23"),
                 author: "LGS Newspaper Club",
                 images: ["article12.jpg"],
                 summary: "LGS Premier Campus: Welcome 2025",
@@ -469,6 +488,7 @@
                 title: "SPORTS FIESTA: TEAM A2 TAKES THE WIN AGAINST TEAM AS IN PENALTY SHOOTOUTS IN THE FOOTBALL REMATCH.",
                 category: "Sports",
                 date: "THURSDAY, DECEMBER 18 2025",
+                rawDate: new Date("2025-12-18"),
                 author: "LGS Newspaper Club",
                 images: ["article13.jpg"],
                 summary: "Sports Fiesta: Team A2 takes the win against Team AS in penalty shootouts in the football rematch.",
@@ -478,7 +498,8 @@
                 id: 1,
                 title: "PAKISTAN'S 27TH AMENDMENT: A TURNING POINT IN CONSTITUTIONAL LAW",
                 category: "World News",
-                date: "Sunday, December 14, 2025",
+                date: "SUNDAY, DECEMBER 14 2025",
+                rawDate: new Date("2025-12-14"),
                 author: "Ayan Ibrahim",
                 images: [
                     "article1_1.jpg",
@@ -493,7 +514,8 @@
                 id: 2,
                 title: "CHAMPIONS AT LAST: KESTRELS TAKE THE TOP FLIGHT",
                 category: "Sports",
-                date: "Thursday, December 11, 2025",
+                date: "THURSDAY, DECEMBER 11 2025",
+                rawDate: new Date("2025-12-11"),
                 author: "LGS Newspaper Club",
                 images: ["article2.jpg"],
                 summary: "The Kestrels deliver a historic victory in a thrilling football championship finale on campus.",
@@ -503,7 +525,8 @@
                 id: 3,
                 title: "SUDAN HAVE BEEN DEVASTATED BY A CIVIL WAR WITH OVER 150,000 CIVILIANS KILLED AND 25 MILLION SUFFERING FROM FAMINE AND MALNUTRITION.",
                 category: "World News",
-                date: "Sunday, December 04, 2025",
+                date: "SUNDAY, DECEMBER 04 2025",
+                rawDate: new Date("2025-12-04"),
                 author: "LGS Newspaper Club",
                 images: ["article3.jpg"],
                 summary: "A human rights perspective on the ongoing humanitarian crisis, civil conflict, and acute food shortages in Sudan.",
@@ -513,7 +536,8 @@
                 id: 4,
                 title: "TABLE TENNIS TOURNAMENT: AJMAL KHAN WINS THE FINAL AGAINST A COMPETITIVE MATCH WITH SHAYAN AMIN",
                 category: "Sports",
-                date: "Sunday, November 30, 2025",
+                date: "SUNDAY, NOVEMBER 30 2025",
+                rawDate: new Date("2025-11-30"),
                 author: "LGS Newspaper Club",
                 images: ["article4.jpg"],
                 summary: "Ajmal Khan emerges victorious in a high-stakes table tennis final following an intense rally battle against Shayan Amin.",
@@ -523,7 +547,8 @@
                 id: 5,
                 title: "ARE TENSIONS RISING AGAIN BETWEEN KABUL AND ISLAMABAD?",
                 category: "World News",
-                date: "Friday, November 28, 2025",
+                date: "FRIDAY, NOVEMBER 28 2025",
+                rawDate: new Date("2025-11-28"),
                 author: "Hoorain Zahra",
                 images: [
                     "article5_1.jpg",
@@ -538,7 +563,8 @@
                 id: 6,
                 title: "AIR FILLED WITH JOY ON EUPHORIA CONCERT #MANNU & ABDUL HANAN",
                 category: "Events",
-                date: "Friday, November 21, 2025",
+                date: "FRIDAY, NOVEMBER 21 2025",
+                rawDate: new Date("2025-11-21"),
                 author: "LGS Newspaper Club",
                 images: ["article6.jpg"],
                 summary: "Live performances by Mannu and Abdul Hanan create an unforgettable musical evening at the Euphoria Concert.",
@@ -548,7 +574,8 @@
                 id: 7,
                 title: "STUDENT COUNCIL ELECTIONS 2025: THE POSTERS ARE GONE, BUT THE TALK REMAINS",
                 category: "Campus",
-                date: "Thursday, November 20, 2025",
+                date: "THURSDAY, NOVEMBER 20 2025",
+                rawDate: new Date("2025-11-20"),
                 author: "LGS Newspaper Club",
                 images: ["article7.jpg"],
                 summary: "A reflection on candidate speeches, student voter turnout, and campaign discussions following the 2025 Student Council elections.",
@@ -556,9 +583,10 @@
             },
             {
                 id: 14,
-                title: "HALLWAYS FINALLY FEEL ALIVE AS LGS PREMIER CAMPUS UPDATES ITs INTERIOR:",
+                title: "HALLWAYS FINALLY FEEL ALIVE AS LGS PREMIER CAMPUS UPDATES IT's INTERIOR:",
                 category: "Campus",
                 date: "WEDNESDAY, FEBRUARY 11 2026",
+                rawDate: new Date("2026-02-11"),
                 author: "LGS Newspaper Club",
                 images: [
                     "article14_1.jpg",
@@ -574,20 +602,31 @@
         ];
 
         let activeCategory = 'All';
+        let sortOrder = 'newest'; // Default sort order
         let activeArticle = null;
         let activeImageIndex = 0;
 
-        // Render Article Cards into Grid with Hover Animations
+        // Render Article Cards into Grid with Sorting and Filtering
         function renderArticles() {
             const grid = document.getElementById('articles-grid');
             if (!grid) return;
             grid.innerHTML = '';
 
-            const filtered = activeCategory === 'All' 
-                ? articles 
+            // 1. Filter by Category
+            let results = activeCategory === 'All' 
+                ? [...articles] 
                 : articles.filter(a => a.category === activeCategory);
 
-            filtered.forEach(article => {
+            // 2. Sort by Date (`rawDate`)
+            results.sort((a, b) => {
+                if (sortOrder === 'newest') {
+                    return b.rawDate - a.rawDate; // Newest first
+                } else {
+                    return a.rawDate - b.rawDate; // Oldest first
+                }
+            });
+
+            results.forEach(article => {
                 const card = document.createElement('article');
                 card.className = "post-card border-2 border-monochrome flex flex-col justify-between cursor-pointer group p-4 sm:p-5 overflow-hidden focus:outline-none focus:ring-2 focus:ring-black";
                 card.tabIndex = 0;
@@ -663,6 +702,15 @@
             });
 
             renderArticles();
+        }
+
+        // Sort Order Switcher
+        function changeSortOrder() {
+            const selectElement = document.getElementById('sort-select');
+            if (selectElement) {
+                sortOrder = selectElement.value;
+                renderArticles();
+            }
         }
 
         // Modal Reader Logic
